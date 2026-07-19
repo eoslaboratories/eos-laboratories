@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /temp
+Disallow: /drafts
+
+Sitemap: https://eoslab.in/sitemap.xml

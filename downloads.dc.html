@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/styles.css">
+  <script src="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/_ds_bundle.js"></script>
+  <script src="./catalogue-data.js"></script>
+  <script src="./google-forms.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <style>body{margin:0;background:#fff;font-family:var(--font-body);}:root{--ink:#2B2F36;}*{box-sizing:border-box;}a{color:inherit;text-decoration:none;}.serif{font-family:'Cormorant Garamond',Georgia,serif;}.crumb a:hover{color:#F26B21}.dl-row:hover{background:#FAFAF8}.doccard{transition:border-color .2s,transform .2s}.doccard:hover{border-color:var(--eos-orange)}.fld{width:100%;height:44px;border:1px solid #D9DEE3;border-radius:8px;background:#FAFAF8;padding:0 14px;font-size:14px;color:var(--ink);outline:none;font-family:var(--font-body)}.fld:focus{border-color:#F26B21}textarea.fld{height:100px;padding:12px 14px;resize:vertical}@keyframes modIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}</style>
+  <!-- data-eos-seo -->
+  <title>Document Requests — COA, SDS &amp; Technical Documents — EOS Laboratories</title>
+  <meta name="description" content="Request Certificates of Analysis (CoA), Safety Data Sheets (SDS), catalogues, technical documentation and certifications from EOS Laboratories.">
+  <link rel="canonical" href="https://eoslab.in/downloads.dc.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EOS Laboratories">
+  <meta name="theme-color" content="#F26B21">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EOS Laboratories">
+  <meta property="og:title" content="Document Requests — COA, SDS &amp; Technical Documents — EOS Laboratories">
+  <meta property="og:description" content="Request Certificates of Analysis (CoA), Safety Data Sheets (SDS), catalogues, technical documentation and certifications from EOS Laboratories.">
+  <meta property="og:url" content="https://eoslab.in/downloads.dc.html">
+  <meta property="og:image" content="https://eoslab.in/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Document Requests — COA, SDS &amp; Technical Documents — EOS Laboratories">
+  <meta name="twitter:description" content="Request Certificates of Analysis (CoA), Safety Data Sheets (SDS), catalogues, technical documentation and certifications from EOS Laboratories.">
+  <meta name="twitter:image" content="https://eoslab.in/assets/og-image.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#F26B21">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Document Requests","url":"https://eoslab.in/downloads.dc.html"}</script>
+  <link rel="stylesheet" href="responsive.css">
+</helmet>
+<div style="max-width:100%;overflow-x:clip;color:var(--ink)">
+  <dc-import name="SiteHeader" hint-size="100%,190px"></dc-import>
+
+  <section style="background:var(--eos-gray-100);padding:48px 40px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div class="crumb" style="font-size:12.5px;color:var(--eos-gray-400);margin-bottom:14px"><a href="index.dc.html">Home</a> / <span style="color:var(--ink)">Document Requests</span></div>
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Document Requests</span>
+      <h1 class="serif" style="font-size:clamp(30px,3.8vw,48px);line-height:1.12;font-weight:600;margin:12px 0 0">COA, SDS &amp; Technical Documents</h1>
+      <p style="color:var(--eos-gray-700);font-size:16px;line-height:1.7;margin:14px 0 0;max-width:660px">Request Certificates of Analysis (CoA), Safety Data Sheets (SDS), product catalogues, technical documentation and certifications. Our technical team will review your request and share the appropriate documents.</p>
+    </div>
+  </section>
+
+  <section style="padding:48px 40px 20px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <input value="{{ query }}" onChange="{{ onSearch }}" type="text" placeholder="Search by product name, product code or document..." class="fld" style="flex:1;min-width:260px">
+        <span style="font-size:13px;color:var(--eos-gray-400)">{{ count }} matches</span>
+      </div>
+      <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:18px;border-top:1px solid var(--color-border-default)">
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="6">
+          <div class="dl-row" style="display:grid;grid-template-columns:110px 1fr 150px 150px;gap:14px;align-items:center;padding:12px 12px;border-bottom:1px solid var(--color-border-default)">
+            <div style="font-family:monospace;font-size:12.5px;font-weight:700">{{ r.code }}</div>
+            <div style="font-size:14px">{{ r.name }}</div>
+            <button onClick="{{ r.reqCoa }}" style="cursor:pointer;background:none;border:1px solid var(--color-border-default);border-radius:2px;font-size:12px;font-weight:600;color:var(--ink);padding:8px" style-hover="border-color:var(--eos-orange);color:var(--eos-orange)">Request CoA</button>
+            <button onClick="{{ r.reqSds }}" style="cursor:pointer;background:none;border:1px solid var(--color-border-default);border-radius:2px;font-size:12px;font-weight:600;color:var(--ink);padding:8px" style-hover="border-color:var(--eos-orange);color:var(--eos-orange)">Request SDS</button>
+          </div>
+        </sc-for>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section style="padding:40px 40px 90px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:18px">Available Documents</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px">
+        <sc-for list="{{ files }}" as="f" hint-placeholder-count="6">
+          <div class="doccard" style="display:flex;flex-direction:column;border:1px solid var(--color-border-default);border-radius:6px;padding:24px">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--eos-orange)">{{ f.tag }}</div>
+            <div style="font-size:16px;font-weight:600;margin-top:10px;line-height:1.3">{{ f.title }}</div>
+            <div style="font-size:13px;color:var(--eos-gray-700);line-height:1.55;margin-top:8px;flex:1">{{ f.meta }}</div>
+            <button onClick="{{ f.request }}" style="cursor:pointer;margin-top:18px;align-self:flex-start;background:var(--eos-orange);color:#fff;border:none;border-radius:2px;font-size:13px;font-weight:600;padding:11px 20px" style-hover="background:var(--eos-orange-600)">Request Document</button>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-size:12.5px;color:var(--eos-gray-400);margin-top:24px">EOS Laboratories provides technical documentation upon request to ensure the latest approved revision is supplied.</p>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;background:rgba(28,30,34,.55);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px">
+      <div onClick="{{ stop }}" style="background:#fff;border-radius:10px;width:100%;max-width:560px;max-height:90vh;overflow:auto;padding:32px;animation:modIn .25s ease both">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--eos-orange)">Document Request</div>
+            <h2 class="serif" style="font-size:26px;font-weight:600;margin:6px 0 0">{{ modalTitle }}</h2>
+          </div>
+          <button onClick="{{ closeModal }}" style="cursor:pointer;background:none;border:none;font-size:24px;color:var(--eos-gray-400);line-height:1">×</button>
+        </div>
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#EAF6EE;border:1px solid #BFE3CC;color:#1B7A3D;font-size:14px;line-height:1.6;padding:20px;border-radius:8px;margin-top:20px">Thank you. Your enquiry has been submitted successfully. Our team will contact you shortly.</div>
+          <button onClick="{{ closeModal }}" style="cursor:pointer;margin-top:18px;background:var(--ink);color:#fff;border:none;border-radius:2px;font-size:13px;font-weight:600;padding:12px 24px">Close</button>
+        </sc-if>
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onSubmit }}" style="margin-top:20px">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div><label for="d-person" style="font-size:12px;font-weight:600;color:var(--eos-gray-700);display:block;margin-bottom:5px">Contact Person *</label><input id="d-person" name="Contact Person" class="fld" required></div>
+            <div><label for="d-co" style="font-size:12px;font-weight:600;color:var(--eos-gray-700);display:block;margin-bottom:5px">Company *</label><input id="d-co" name="Company" class="fld" required></div>
+            <div><label for="d-email" style="font-size:12px;font-weight:600;color:var(--eos-gray-700);display:block;margin-bottom:5px">Email *</label><input id="d-email" name="Email" class="fld" type="email" required></div>
+            <div><label for="d-doc" style="font-size:12px;font-weight:600;color:var(--eos-gray-700);display:block;margin-bottom:5px">Document Required *</label><select id="d-doc" name="Document Required" class="fld" required><option value="">Select…</option><option value="COA">COA</option><option value="SDS">SDS</option><option value="Technical Data Sheet">Technical Data Sheet</option><option value="Brochure">Brochure</option></select></div>
+            <div><label for="d-pname" style="font-size:12px;font-weight:600;color:var(--eos-gray-700);display:block;margin-bottom:5px">Product Name (optional)</label><input id="d-pname" name="Product Name" class="fld" defaultValue="{{ prefillName }}"></div>
+            <div><label for="d-code" style="font-size:12px;font-weight:600;color:var(--eos-gray-700);display:block;margin-bottom:5px">Product Code (optional)</label><input id="d-code" name="Product Code" class="fld" defaultValue="{{ prefillCode }}"></div>
+          </div>
+          <div style="margin-top:14px"><label for="d-msg" style="font-size:12px;font-weight:600;color:var(--eos-gray-700);display:block;margin-bottom:5px">Message</label><textarea id="d-msg" name="Message" class="fld" defaultValue="{{ prefillMsg }}" placeholder="Document type, lot number, intended use..."></textarea></div>
+          <button type="submit" disabled="{{ sending }}" style="cursor:pointer;margin-top:18px;background:var(--eos-orange);color:#fff;border:none;border-radius:2px;font-size:14px;font-weight:600;padding:14px 28px;opacity:{{ btnOpacity }}" style-hover="background:var(--eos-orange-600)">{{ btnLabel }}</button>
+          <sc-if value="{{ errored }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:14px;background:#FBEBEB;border:1px solid #E5B8B8;color:#A32A2A;font-size:13px;padding:12px 14px;border-radius:6px">Unable to submit your enquiry. Please try again later.</div>
+          </sc-if>
+        </form>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { query: '', ready: false, modalOpen: false, submitted: false, sending: false, errored: false, modalTitle: '', prefillCode: '', prefillName: '', prefillMsg: '' };
+  componentDidMount() {
+    const doc = new URLSearchParams(window.location.search).get('doc');
+    if (doc) this.setState({ modalOpen: true, submitted: false, modalTitle: doc, prefillMsg: 'Requesting: ' + doc + '.' });
+    const wait = () => { if (!window.EOS_CATALOGUE) { setTimeout(wait, 40); return; } this.setState({ ready: true }); };
+    wait();
+  }
+  filesData = [
+    { tag: 'REQUEST • CATALOGUE', title: 'EOS Master Product Catalogue 2026–27', meta: 'The complete EOS range across 550+ microbiology references.' },
+    { tag: 'REQUEST • BROCHURE', title: 'Ready-to-Use Culture Media', meta: 'Range brochure covering pre-poured plates and prepared tubes.' },
+    { tag: 'REQUEST • BROCHURE', title: 'Antibiotic Susceptibility Discs', meta: 'CLSI / EUCAST disc panel and potency reference.' },
+    { tag: 'REQUEST • TECHNICAL DOCUMENT', title: 'Media Preparation Guide', meta: 'Rehydration, sterilisation and handling of dehydrated media.' },
+    { tag: 'REQUEST • CERTIFICATE', title: 'ISO 9001 & ISO 13485 Certificates', meta: 'Current quality-management system certification.' },
+    { tag: 'REQUEST • GUIDE', title: 'Storage & Handling Guidelines', meta: 'Cold-chain, shelf-life and storage best practice.' }
+  ];
+  open(title, code, msg, name) { this.setState({ modalOpen: true, submitted: false, modalTitle: title, prefillCode: code || '', prefillMsg: msg || '', prefillName: name || '' }); }
+  renderVals() {
+    const q = this.state.query.trim().toLowerCase();
+    const data = (this.state.ready && window.EOS_CATALOGUE) ? window.EOS_CATALOGUE : [];
+    let results = [];
+    if (q) results = data.filter(p => p.name.toLowerCase().includes(q) || p.code.toLowerCase().includes(q)).slice(0, 40)
+      .map(p => ({
+        code: p.code, name: p.name,
+        reqCoa: () => this.open('Certificate of Analysis — ' + p.code, p.code, 'Requesting the Certificate of Analysis for ' + p.name + ' (' + p.code + ').', p.name),
+        reqSds: () => this.open('Safety Data Sheet — ' + p.code, p.code, 'Requesting the Safety Data Sheet for ' + p.name + ' (' + p.code + ').', p.name)
+      }));
+    const files = this.filesData.map(f => ({ tag: f.tag, title: f.title, meta: f.meta, request: () => this.open(f.title, '', 'Requesting: ' + f.title + '.') }));
+    return {
+      query: this.state.query,
+      onSearch: (e) => this.setState({ query: e.target.value }),
+      hasQuery: q.length > 0,
+      count: q ? results.length : 0,
+      results, files,
+      modalOpen: this.state.modalOpen,
+      modalTitle: this.state.modalTitle,
+      submitted: this.state.submitted,
+      showForm: this.state.modalOpen && !this.state.submitted,
+      prefillCode: this.state.prefillCode,
+      prefillName: this.state.prefillName,
+      prefillMsg: this.state.prefillMsg,
+      closeModal: () => this.setState({ modalOpen: false }),
+      stop: (e) => e.stopPropagation(),
+      sending: this.state.sending,
+      errored: this.state.errored,
+      btnLabel: this.state.sending ? 'Sending…' : 'Request Document',
+      btnOpacity: this.state.sending ? 0.6 : 1,
+      onSubmit: (e) => {
+        e.preventDefault();
+        if (this.state.sending) return;
+        const f = e.target;
+        if (f._gotcha && f._gotcha.value) return;
+        const val = (n) => { const el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+        const V = window.EOSValidate;
+        if (!V.required(val('Company')) || !V.required(val('Contact Person')) || !V.email(val('Email')) || !V.required(val('Document Required'))) {
+          this.setState({ errored: true }); return;
+        }
+        this.setState({ sending: true, errored: false });
+        window.submitToEOS({
+          formType: 'document',
+          company: val('Company'), contactPerson: val('Contact Person'), email: val('Email'),
+          productName: val('Product Name'), productCode: val('Product Code'),
+          documentRequired: val('Document Required'), message: val('Message')
+        }).then(() => this.setState({ submitted: true, sending: false }))
+          .catch(() => this.setState({ errored: true, sending: false }));
+      }
+    };
+  }
+}
+
+</script>
+</body>
+</html>

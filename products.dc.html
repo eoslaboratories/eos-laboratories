@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/styles.css">
+  <script src="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/_ds_bundle.js"></script>
+  <script src="./catalogue-data.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;background:#fff;font-family:var(--font-body);}
+    :root{--ink:#2B2F36;}
+    *{box-sizing:border-box;}
+    a{color:inherit;text-decoration:none;}
+    .serif{font-family:'Cormorant Garamond',Georgia,serif;}
+    .prow:hover{background:#FAFAF8}
+    .prow:hover .prow-code{color:#F26B21}
+    .crumb a:hover{color:#F26B21}
+    .sbf{background:none;border:none;text-align:left;cursor:pointer;font-size:13px;padding:5px 0;line-height:1.35}
+    .sbf:hover{color:#F26B21 !important}
+    .pcard{transition:border-color .2s,box-shadow .2s}
+    .pcard:hover{border-color:#C2C8CF}
+  </style>
+  <!-- data-eos-seo -->
+  <title>Product Catalogue — EOS Laboratories</title>
+  <meta name="description" content="Browse 550+ microbiology references: ready-to-use and dehydrated culture media and antibiotic susceptibility discs. Filter by category, subcategory and media type. Pricing on request.">
+  <link rel="canonical" href="https://eoslab.in/products.dc.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EOS Laboratories">
+  <meta name="theme-color" content="#F26B21">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EOS Laboratories">
+  <meta property="og:title" content="Product Catalogue — EOS Laboratories">
+  <meta property="og:description" content="Browse 550+ microbiology references: ready-to-use and dehydrated culture media and antibiotic susceptibility discs. Filter by category, subcategory and media type. Pricing on request.">
+  <meta property="og:url" content="https://eoslab.in/products.dc.html">
+  <meta property="og:image" content="https://eoslab.in/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product Catalogue — EOS Laboratories">
+  <meta name="twitter:description" content="Browse 550+ microbiology references: ready-to-use and dehydrated culture media and antibiotic susceptibility discs. Filter by category, subcategory and media type. Pricing on request.">
+  <meta name="twitter:image" content="https://eoslab.in/assets/og-image.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#F26B21">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Product Catalogue","url":"https://eoslab.in/products.dc.html"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eoslab.in/index.dc.html"},{"@type":"ListItem","position":2,"name":"Products","item":"https://eoslab.in/products.dc.html"}]}</script>
+  <link rel="stylesheet" href="responsive.css">
+</helmet>
+
+<div style="max-width:100%;overflow-x:clip;color:var(--ink)">
+  <dc-import name="SiteHeader" hint-size="100%,190px"></dc-import>
+
+  <!-- LISTING VIEW -->
+  <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <div style="background:var(--eos-gray-100);padding:40px 40px 34px">
+      <div style="max-width:1320px;margin:0 auto">
+        <div class="crumb" style="font-size:12.5px;color:var(--eos-gray-400);margin-bottom:16px"><a href="index.dc.html">Home</a> &nbsp;/&nbsp; <a href="products.dc.html">Products</a> {{ crumbTail }}</div>
+        <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Product Catalogue</span>
+        <h1 class="serif" style="font-size:clamp(28px,3.4vw,42px);line-height:1.15;font-weight:600;margin:10px 0 0">{{ listTitle }}</h1>
+        <p style="color:var(--eos-gray-700);font-size:15.5px;line-height:1.7;margin:10px 0 0;max-width:640px">{{ listSubtitle }}</p>
+
+        <!-- Level 1 main categories -->
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:24px">
+          <sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.select }}" style="cursor:pointer;font-size:13px;font-weight:600;padding:9px 16px;border-radius:999px;white-space:nowrap;border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }}">{{ c.label }} · {{ c.count }}</button>
+          </sc-for>
+        </div>
+        <!-- Level 2 subcategory chips -->
+        <div style="display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:12px">
+          <sc-for list="{{ subcats }}" as="s" hint-placeholder-count="5">
+            <button onClick="{{ s.select }}" style="cursor:pointer;font-size:12px;font-weight:600;padding:7px 13px;border-radius:999px;white-space:nowrap;border:1px solid {{ s.border }};background:{{ s.bg }};color:{{ s.color }}">{{ s.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width:1320px;margin:0 auto;padding:32px 40px 90px;display:grid;grid-template-columns:230px 1fr;gap:40px">
+      <!-- SIDEBAR -->
+      <aside style="align-self:start">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:12px">Refine</div>
+        <div style="font-size:11px;font-weight:700;color:var(--eos-orange);letter-spacing:.06em;text-transform:uppercase;margin:6px 0 8px">Category</div>
+        <div style="display:flex;flex-direction:column;gap:2px;border-bottom:1px solid var(--color-border-default);padding-bottom:14px">
+          <sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+            <button onClick="{{ c.select }}" class="sbf" style="color:{{ c.sbColor }};font-weight:{{ c.sbWeight }}">{{ c.label }} <span style="color:var(--eos-gray-400);font-weight:400">{{ c.count }}</span></button>
+          </sc-for>
+        </div>
+        <div style="font-size:11px;font-weight:700;color:var(--eos-orange);letter-spacing:.06em;text-transform:uppercase;margin:16px 0 8px">Subcategory</div>
+        <div style="display:flex;flex-direction:column;gap:2px;border-bottom:1px solid var(--color-border-default);padding-bottom:14px">
+          <sc-for list="{{ subcats }}" as="s" hint-placeholder-count="5">
+            <button onClick="{{ s.select }}" class="sbf" style="color:{{ s.sbColor }};font-weight:{{ s.sbWeight }}">{{ s.label }}</button>
+          </sc-for>
+        </div>
+        <div style="font-size:11px;font-weight:700;color:var(--eos-orange);letter-spacing:.06em;text-transform:uppercase;margin:16px 0 8px">Media Type</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ mtypes }}" as="m" hint-placeholder-count="4">
+            <button onClick="{{ m.select }}" class="sbf" style="color:{{ m.sbColor }};font-weight:{{ m.sbWeight }}">{{ m.label }} <span style="color:var(--eos-gray-400);font-weight:400">{{ m.count }}</span></button>
+          </sc-for>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div style="font-size:13px;color:var(--eos-gray-400)">{{ resultCount }} products</div>
+          <div style="display:flex;gap:12px;align-items:center">
+            <input value="{{ query }}" onChange="{{ onSearch }}" type="text" placeholder="Search name, code, keyword or application..." style="height:42px;width:280px;border:1px solid #D9DEE3;border-radius:8px;background:#FAFAF8;padding:0 14px;font-size:14px;color:var(--ink);outline:none">
+            <select onChange="{{ onSort }}" style="height:42px;border:1px solid #D9DEE3;border-radius:8px;background:#fff;padding:0 12px;font-size:13px;color:var(--ink);cursor:pointer">
+              <option value="az">Sort: Alphabetical</option>
+              <option value="newest">Sort: Newest</option>
+              <option value="popular">Sort: Most Popular</option>
+              <option value="code">Sort: Product Code</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px">
+          <sc-for list="{{ cards }}" as="p" hint-placeholder-count="9">
+            <div class="pcard" style="border:1px solid var(--color-border-default);border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+              <a href="{{ p.href }}" style="display:block"><image-slot id="{{ p.imgId }}" shape="rect" placeholder="{{ p.imgPlaceholder }}" style="width:100%;height:150px"></image-slot></a>
+              <div style="padding:16px 16px 18px;display:flex;flex-direction:column;flex:1">
+                <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--eos-orange)">{{ p.familyName }}</div>
+                <a href="{{ p.href }}" style="font-size:15px;font-weight:600;color:var(--ink);margin-top:7px;line-height:1.3;display:block" style-hover="color:var(--eos-orange)">{{ p.name }}</a>
+                <div style="font-family:monospace;font-size:11.5px;color:var(--eos-gray-400);margin-top:5px">REF {{ p.code }}</div>
+                <div style="font-size:12.5px;color:var(--eos-gray-700);line-height:1.55;margin-top:9px;flex:1">{{ p.desc }}</div>
+                <div style="display:flex;gap:8px;margin-top:16px">
+                  <a href="{{ p.href }}" style="flex:1;text-align:center;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:10px;border-radius:2px" style-hover="background:#000">View Product</a>
+                  <a href="{{ p.enquireHref }}" style="flex:1;text-align:center;border:1px solid var(--eos-orange);color:var(--eos-orange);font-size:12px;font-weight:600;padding:10px;border-radius:2px" style-hover="background:var(--eos-orange);color:#fff">Enquire for Pricing</a>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ hasMore }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;margin-top:36px">
+            <button onClick="{{ showMore }}" style="cursor:pointer;border:1px solid var(--color-border-default);background:#fff;color:var(--eos-gray-700);font-size:14px;font-weight:600;padding:13px 30px;border-radius:2px">Load more products</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- DETAIL VIEW -->
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <div style="background:var(--eos-gray-100);padding:36px 40px 34px">
+      <div style="max-width:1180px;margin:0 auto">
+        <div class="crumb" style="font-size:12.5px;color:var(--eos-gray-400)"><a href="index.dc.html">Home</a> &nbsp;/&nbsp; <a href="products.dc.html">Products</a> &nbsp;/&nbsp; <a href="{{ prod.catHref }}">{{ prod.catName }}</a> &nbsp;/&nbsp; <a href="{{ prod.familyHref }}">{{ prod.familyName }}</a> &nbsp;/&nbsp; <span style="color:var(--ink)">{{ prod.code }}</span></div>
+      </div>
+    </div>
+
+    <div style="max-width:1180px;margin:0 auto;padding:48px 40px 40px;display:grid;grid-template-columns:1fr 1.25fr;gap:56px">
+      <div>
+        <image-slot id="pd-img" shape="rect" placeholder="{{ prod.imgPlaceholder }}" style="width:100%;height:400px;border-radius:4px;border:1px solid var(--color-border-default)"></image-slot>
+        <div style="display:flex;gap:12px;margin-top:16px">
+          <a href="downloads.dc.html" style="flex:1;text-align:center;border:1px solid var(--color-border-default);color:var(--eos-gray-700);font-size:12.5px;font-weight:600;padding:11px;border-radius:2px">Download COA</a>
+          <a href="downloads.dc.html" style="flex:1;text-align:center;border:1px solid var(--color-border-default);color:var(--eos-gray-700);font-size:12.5px;font-weight:600;padding:11px;border-radius:2px">Download SDS</a>
+        </div>
+      </div>
+      <div>
+        <span style="color:var(--eos-orange);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">{{ prod.catName }}</span>
+        <h1 class="serif" style="font-size:clamp(28px,3.4vw,40px);line-height:1.12;font-weight:600;margin:10px 0 0">{{ prod.name }}</h1>
+        <div style="font-family:monospace;font-size:14px;color:var(--eos-gray-400);margin-top:10px">REF {{ prod.code }}</div>
+        <p style="color:var(--eos-gray-700);font-size:15.5px;line-height:1.8;margin:22px 0 0">{{ prod.desc }}</p>
+
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin:32px 0 12px">Applications</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px">
+          <sc-for list="{{ prod.applications }}" as="a" hint-placeholder-count="3">
+            <li style="display:flex;gap:10px;font-size:14px;color:var(--eos-gray-700)"><span style="width:5px;height:5px;border-radius:50%;background:var(--eos-orange);margin-top:8px;flex-shrink:0"></span>{{ a }}</li>
+          </sc-for>
+        </ul>
+
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin:32px 0 0">Packaging Sizes</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">
+          <sc-for list="{{ prod.packs }}" as="pk" hint-placeholder-count="2">
+            <div style="border:1px solid var(--color-border-default);border-radius:4px;padding:12px 18px;min-width:130px">
+              <div style="font-size:13px;font-weight:600;color:var(--ink)">{{ pk.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px">
+          <a href="{{ prod.quoteHref }}" style="background:var(--eos-orange);color:#fff;font-size:14px;font-weight:600;padding:14px 26px;border-radius:2px" style-hover="background:var(--eos-orange-600)">Enquire for Pricing</a>
+          <a href="{{ prod.infoHref }}" style="border:1px solid var(--color-border-default);color:var(--ink);font-size:14px;font-weight:600;padding:14px 26px;border-radius:2px" style-hover="border-color:var(--eos-orange);color:var(--eos-orange)">Request Technical Information</a>
+          <a href="downloads.dc.html" style="border:1px solid var(--color-border-default);color:var(--ink);font-size:14px;font-weight:600;padding:14px 26px;border-radius:2px" style-hover="border-color:var(--eos-orange);color:var(--eos-orange)">Download Datasheet</a>
+          <a href="contact.dc.html" style="border:1px solid var(--color-border-default);color:var(--ink);font-size:14px;font-weight:600;padding:14px 26px;border-radius:2px" style-hover="border-color:var(--eos-orange);color:var(--eos-orange)">Contact Sales</a>
+        </div>
+        <div style="font-size:12.5px;color:var(--eos-gray-400);margin-top:16px">Pricing available on request. Please contact EOS Laboratories or your authorized distributor.</div>
+      </div>
+    </div>
+
+    <!-- specifications -->
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin:0 0 6px">Specifications</div>
+      <sc-for list="{{ prod.specs }}" as="s" hint-placeholder-count="5">
+        <div style="display:grid;grid-template-columns:240px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--color-border-default)">
+          <div style="font-size:13.5px;color:var(--eos-gray-400)">{{ s.k }}</div>
+          <div style="font-size:13.5px;color:var(--ink);font-weight:500">{{ s.v }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- prev/next -->
+    <div style="max-width:1180px;margin:0 auto;padding:32px 40px;display:flex;justify-content:space-between;gap:16px">
+      <a href="{{ prod.prevHref }}" style="font-size:13px;color:var(--eos-gray-700);font-weight:600">{{ prod.prevLabel }}</a>
+      <a href="{{ prod.nextHref }}" style="font-size:13px;color:var(--eos-gray-700);font-weight:600;text-align:right">{{ prod.nextLabel }}</a>
+    </div>
+
+    <!-- related -->
+    <div style="background:var(--eos-gray-100);padding:64px 40px">
+      <div style="max-width:1180px;margin:0 auto">
+        <span style="color:var(--eos-orange);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Related Products</span>
+        <h2 class="serif" style="font-size:28px;font-weight:600;margin:10px 0 24px">More from {{ prod.familyName }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+          <sc-for list="{{ prod.related }}" as="r" hint-placeholder-count="4">
+            <a href="{{ r.href }}" style="display:block;background:#fff;border:1px solid var(--color-border-default);border-radius:4px;padding:18px" style-hover="border-color:var(--eos-orange)">
+              <div style="font-family:monospace;font-size:11.5px;font-weight:700;color:var(--eos-orange)">{{ r.code }}</div>
+              <div style="font-size:14px;color:var(--ink);margin-top:8px;line-height:1.35">{{ r.name }}</div>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- quality/manufacturing links -->
+    <div style="max-width:1180px;margin:0 auto;padding:56px 40px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <a href="manufacturing.dc.html" style="display:block;border:1px solid var(--color-border-default);border-radius:4px;padding:28px" style-hover="border-color:var(--eos-orange)">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--eos-orange)">Manufacturing</div>
+        <div class="serif" style="font-size:22px;font-weight:600;margin-top:8px">How this product is made →</div>
+      </a>
+      <a href="quality.dc.html" style="display:block;border:1px solid var(--color-border-default);border-radius:4px;padding:28px" style-hover="border-color:var(--eos-orange)">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--eos-orange)">Quality &amp; Compliance</div>
+        <div class="serif" style="font-size:22px;font-weight:600;margin-top:8px">Documentation &amp; certification →</div>
+      </a>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- NOT FOUND -->
+  <sc-if value="{{ notFound }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1180px;margin:0 auto;padding:100px 40px;text-align:center">
+      <h1 class="serif" style="font-size:40px;font-weight:600">Product not found</h1>
+      <p style="color:var(--eos-gray-700);margin:16px 0 28px">The product code requested is not in the current catalogue.</p>
+      <a href="products.dc.html" style="background:var(--eos-orange);color:#fff;font-size:14px;font-weight:600;padding:14px 28px;border-radius:2px">Browse all products</a>
+    </div>
+  </sc-if>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  CAT = {
+    rtu: { name: 'Ready-to-Use Culture Media', href: 'products.dc.html?cat=rtu' },
+    dcm: { name: 'Dehydrated Culture Media', href: 'products.dc.html?cat=dcm' },
+    ast: { name: 'Antibiotic Susceptibility Discs', href: 'products.dc.html?cat=ast' }
+  };
+
+  state = { cat: 'all', fam: 'all', mtype: 'all', query: '', sort: 'az', limit: 24, code: null, ready: false };
+
+  componentDidMount() {
+    const wait = () => {
+      if (!window.EOS_CATALOGUE) { setTimeout(wait, 40); return; }
+      const params = new URLSearchParams(window.location.search);
+      this.setState({
+        ready: true,
+        code: params.get('p'),
+        cat: params.get('cat') || 'all',
+        fam: params.get('fam') || 'all',
+        query: params.get('q') || ''
+      });
+    };
+    wait();
+  }
+
+  all() { return window.EOS_CATALOGUE || []; }
+
+
+  descFor(p) {
+    if (p.cat === 'rtu') return `${p.name} is supplied as a ready-to-use, pre-poured format — quality-controlled and released against reference strains for immediate laboratory use, eliminating in-house preparation and its associated variability.`;
+    if (p.cat === 'dcm') return `${p.name} is a dehydrated culture medium manufactured to exacting raw-material specifications, delivering reproducible growth performance after standard in-house rehydration and sterilisation.`;
+    return `${p.name}${p.potency ? ' (' + p.potency + ')' : ''} antibiotic susceptibility disc, manufactured to EUCAST and CLSI potency standards for accurate, reproducible zone-of-inhibition testing.`;
+  }
+  appsFor(p) {
+    if (p.cat === 'rtu') return ['Routine isolation and cultivation in clinical microbiology', 'Environmental and industrial monitoring', 'Quality-control workflows requiring validated, ready-to-use media'];
+    if (p.cat === 'dcm') return ['In-house media preparation for high-throughput laboratories', 'Research and method-development applications', 'Cost-efficient bulk culture media production'];
+    return ['Kirby-Bauer disc-diffusion susceptibility testing', 'Antimicrobial resistance surveillance', 'Clinical and veterinary AST panels aligned to CLSI/EUCAST'];
+  }
+  specsFor(p) {
+    const base = [
+      { k: 'Product Code', v: p.code },
+      { k: 'Category', v: this.CAT[p.cat].name }
+    ];
+    if (p.cat === 'ast') {
+      base.push({ k: 'Symbol', v: p.symbol || '—' });
+      base.push({ k: 'Potency', v: p.potency || '—' });
+      base.push({ k: 'Standard', v: 'CLSI & EUCAST' });
+      base.push({ k: 'Format', v: 'Cartridge / vial' });
+    } else if (p.cat === 'rtu') {
+      base.push({ k: 'Format', v: '90mm plate / prepared tube' });
+      base.push({ k: 'Sterility', v: 'Sterility tested per lot' });
+      base.push({ k: 'Compliance', v: 'ISO 11133' });
+      base.push({ k: 'Shelf life', v: '12–18 months (2–8°C)' });
+    } else {
+      base.push({ k: 'Format', v: 'Dehydrated powder' });
+      base.push({ k: 'Compliance', v: 'Pharmacopoeial / ISO' });
+      base.push({ k: 'Shelf life', v: '36 months (sealed, dry)' });
+    }
+    return base;
+  }
+  imgPlaceholder(p) {
+    if (p.cat === 'rtu') return `${p.name} — 90mm prepared plate, studio white background`;
+    if (p.cat === 'dcm') return `${p.name} — dehydrated media bottle, studio white background`;
+    return `${p.name} antibiotic disc cartridge, studio white background`;
+  }
+
+  mtypeOf(p) {
+    const n = (p.name || '').toLowerCase();
+    if (p.cat === 'ast') return 'Discs';
+    if (n.includes('slant')) return 'Slants';
+    if (n.includes('broth') || n.includes(' water') || n.includes('fluid')) return 'Broths';
+    if (n.includes('plate')) return 'Plates';
+    if (n.includes('base')) return 'Bases';
+    if (n.includes('supplement')) return 'Supplements';
+    return 'Agar / Media';
+  }
+  shortDesc(p) {
+    if (p.cat === 'rtu') return 'Pre-poured, quality-controlled ready-to-use format, released against reference strains.';
+    if (p.cat === 'dcm') return 'Dehydrated culture medium manufactured for reproducible in-house preparation.';
+    return (p.potency ? p.potency + ' ' : '') + 'antibiotic susceptibility disc to CLSI / EUCAST potency standards.';
+  }
+
+  renderVals() {
+    if (!this.state.ready) {
+      return { isList: false, isDetail: false, notFound: false, cats: [], visible: [], prod: {} };
+    }
+    const data = this.all();
+
+    // DETAIL
+    if (this.state.code) {
+      const idx = data.findIndex(x => x.code === this.state.code);
+      if (idx === -1) return { isList: false, isDetail: false, notFound: true, cats: [], visible: [], prod: {} };
+      const p = data[idx];
+      const catList = data.filter(x => x.familySlug === p.familySlug);
+      const ci = catList.findIndex(x => x.code === p.code);
+      const related = catList.filter(x => x.code !== p.code).slice(Math.max(0, ci - 2), Math.max(0, ci - 2) + 4)
+        .map(r => ({ code: r.code, name: r.name, href: 'products.dc.html?p=' + encodeURIComponent(r.code) }));
+      const prev = catList[(ci - 1 + catList.length) % catList.length];
+      const next = catList[(ci + 1) % catList.length];
+      const prod = {
+        name: p.name, code: p.code,
+        catName: this.CAT[p.cat].name, catHref: this.CAT[p.cat].href,
+        familyName: p.family, familyHref: 'family.dc.html?fam=' + p.familySlug,
+        desc: this.descFor(p),
+        applications: this.appsFor(p),
+        specs: this.specsFor(p),
+        packs: (p.packs || []).map(pk => ({ label: pk.label })),
+        imgPlaceholder: this.imgPlaceholder(p),
+        quoteHref: 'request-a-quote.dc.html?code=' + encodeURIComponent(p.code),
+        infoHref: 'contact.dc.html?code=' + encodeURIComponent(p.code),
+        related,
+        prevHref: 'products.dc.html?p=' + encodeURIComponent(prev.code),
+        nextHref: 'products.dc.html?p=' + encodeURIComponent(next.code),
+        prevLabel: '← ' + prev.code + '  ' + prev.name,
+        nextLabel: next.code + '  ' + next.name + '  →'
+      };
+      return { isList: false, isDetail: true, notFound: false, cats: [], visible: [], prod };
+    }
+
+    // LIST
+    const counts = { all: data.length, rtu: 0, dcm: 0, ast: 0 };
+    data.forEach(p => counts[p.cat]++);
+    const catDefs = [
+      { key: 'all', label: 'All Products' },
+      { key: 'rtu', label: 'Ready-to-Use Culture Media' },
+      { key: 'dcm', label: 'Dehydrated Culture Media' },
+      { key: 'ast', label: 'Antibiotic Susceptibility' }
+    ];
+    const active = this.state.cat;
+    const activeFam = this.state.fam;
+    const activeMtype = this.state.mtype;
+    const cats = catDefs.map(c => ({
+      label: c.label, count: counts[c.key],
+      select: () => this.setState({ cat: c.key, fam: 'all', mtype: 'all', limit: 24 }),
+      bg: active === c.key ? 'var(--eos-orange)' : '#fff',
+      color: active === c.key ? '#fff' : 'var(--eos-gray-700)',
+      border: active === c.key ? 'var(--eos-orange)' : 'var(--color-border-default)',
+      sbColor: active === c.key ? '#F26B21' : 'var(--eos-gray-700)',
+      sbWeight: active === c.key ? 700 : 500
+    }));
+
+    // Level 2 subcategories (families) for active category
+    const famList = window.EOS_FAMILIES.filter(f => f.count > 0 && (active === 'all' || f.cat === active));
+    const subDefs = [{ slug: 'all', family: 'All Subcategories' }].concat(famList.map(f => ({ slug: f.slug, family: f.family })));
+    const subcats = subDefs.map(s => ({
+      label: s.slug === 'all' ? s.family : s.family,
+      select: () => this.setState({ fam: s.slug, mtype: 'all', limit: 24 }),
+      bg: activeFam === s.slug ? 'var(--eos-orange)' : '#fff',
+      color: activeFam === s.slug ? '#fff' : 'var(--eos-gray-700)',
+      border: activeFam === s.slug ? 'var(--eos-orange)' : 'var(--color-border-default)',
+      sbColor: activeFam === s.slug ? '#F26B21' : 'var(--eos-gray-700)',
+      sbWeight: activeFam === s.slug ? 700 : 500
+    }));
+
+    // base set after category + subcategory
+    let base = data.filter(p => (active === 'all' || p.cat === active) && (activeFam === 'all' || p.familySlug === activeFam));
+
+    // media type facet counts (over category+subcategory set)
+    const mtCount = {};
+    base.forEach(p => { const m = this.mtypeOf(p); mtCount[m] = (mtCount[m] || 0) + 1; });
+    const mtypeDefs = [{ key: 'all', label: 'All Types', count: base.length }]
+      .concat(Object.keys(mtCount).sort().map(k => ({ key: k, label: k, count: mtCount[k] })));
+    const mtypes = mtypeDefs.map(m => ({
+      label: m.label, count: m.count,
+      select: () => this.setState({ mtype: m.key, limit: 24 }),
+      sbColor: activeMtype === m.key ? '#F26B21' : 'var(--eos-gray-700)',
+      sbWeight: activeMtype === m.key ? 700 : 500
+    }));
+
+    // apply media type + search
+    let filtered = base.filter(p => activeMtype === 'all' || this.mtypeOf(p) === activeMtype);
+    const q = this.state.query.trim().toLowerCase();
+    if (q) filtered = filtered.filter(p => (p.name + ' ' + p.code + ' ' + (p.family || '') + ' ' + this.mtypeOf(p)).toLowerCase().includes(q));
+
+    const sort = this.state.sort;
+    filtered = filtered.slice().sort((a, b) => {
+      if (sort === 'code') return a.code.localeCompare(b.code);
+      if (sort === 'newest') return b.code.localeCompare(a.code);
+      return a.name.localeCompare(b.name);
+    });
+    if (sort === 'popular') { /* keep source order */ filtered = base.filter(p => (activeMtype === 'all' || this.mtypeOf(p) === activeMtype) && (!q || (p.name + ' ' + p.code + ' ' + (p.family || '')).toLowerCase().includes(q))); }
+
+    const cards = filtered.slice(0, this.state.limit).map(p => ({
+      code: p.code, name: p.name,
+      familyName: p.family,
+      desc: this.shortDesc(p),
+      imgId: 'pc-' + p.code,
+      imgPlaceholder: this.imgPlaceholder(p),
+      href: 'products.dc.html?p=' + encodeURIComponent(p.code),
+      enquireHref: 'request-a-quote.dc.html?code=' + encodeURIComponent(p.code)
+    }));
+
+    const titles = { all: 'Complete Product Catalogue', rtu: 'Ready-to-Use Culture Media', dcm: 'Dehydrated Culture Media', ast: 'Antibiotic Susceptibility Testing' };
+    const subsT = {
+      all: 'Over 550 microbiology references across culture media, dehydrated formulations and antibiotic susceptibility discs — manufactured under ISO 13485 and ISO 9001 quality systems.',
+      rtu: 'Pre-poured, quality-controlled plates and prepared tubes released against reference strains for immediate laboratory use.',
+      dcm: 'Dehydrated culture media manufactured to exacting raw-material specifications for reproducible in-house preparation.',
+      ast: 'Antibiotic susceptibility discs manufactured to EUCAST and CLSI potency standards for accurate zone-of-inhibition testing.'
+    };
+    const famMeta = window.EOS_FAMILIES.find(f => f.slug === activeFam);
+    let crumbTail = active !== 'all' ? '&nbsp;/&nbsp; <span style="color:var(--ink)">' + (titles[active] || '') + '</span>' : '';
+    if (famMeta) crumbTail = '&nbsp;/&nbsp; <a href="products.dc.html?cat=' + famMeta.cat + '">' + titles[famMeta.cat] + '</a> &nbsp;/&nbsp; <span style="color:var(--ink)">' + famMeta.family + '</span>';
+
+    return {
+      isList: true, isDetail: false, notFound: false,
+      cats, subcats, mtypes, cards,
+      crumbTail,
+      query: this.state.query,
+      onSearch: (e) => this.setState({ query: e.target.value, limit: 24 }),
+      onSort: (e) => this.setState({ sort: e.target.value }),
+      resultCount: filtered.length,
+      hasMore: filtered.length > this.state.limit,
+      showMore: () => this.setState({ limit: this.state.limit + 24 }),
+      listTitle: famMeta ? famMeta.family : (titles[active] || titles.all),
+      listSubtitle: famMeta ? ('Part of ' + titles[famMeta.cat] + '.') : (subsT[active] || subsT.all)
+    };
+  }
+}
+
+</script>
+</body>
+</html>

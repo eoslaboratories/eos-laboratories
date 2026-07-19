@@ -1,0 +1,5 @@
+Contact: mailto:eoslab@yahoo.com
+Expires: 2027-07-19T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://eoslab.in/security.txt
+Policy: https://eoslab.in/contact.dc.html

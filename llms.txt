@@ -1,0 +1,27 @@
+# EOS Laboratories
+
+> Manufacturer of ready-to-use and dehydrated microbiology culture media,
+> antibiotic susceptibility discs, transport systems and laboratory
+> consumables for clinical, pharmaceutical, food, industrial, veterinary
+> and research laboratories. Based in Mumbai, India. ISO 9001 & ISO 13485.
+> Tagline: Precision. Quality. Trust. Pricing is available on request only.
+
+## Key pages
+- [Home](https://eoslab.in/index.dc.html): Company overview and product portfolio.
+- [About](https://eoslab.in/about.dc.html): Manufacturer profile, quality systems, brand values.
+- [Products](https://eoslab.in/products.dc.html): Full catalogue (550+ references) with category, subcategory and media-type filtering.
+- [Manufacturing](https://eoslab.in/manufacturing.dc.html): Six-stage manufacturing process and controlled environments.
+- [Quality & Compliance](https://eoslab.in/quality.dc.html): Certifications and documentation (COA, SDS, IFU, TDS).
+- [Industries](https://eoslab.in/industries.dc.html): Clinical, pharmaceutical, food, water, veterinary, research solutions.
+- [Document Requests](https://eoslab.in/downloads.dc.html): Request COA, SDS, catalogues and technical documents.
+- [Request a Quote](https://eoslab.in/request-a-quote.dc.html): Enquiry form (pricing on request).
+- [Contact](https://eoslab.in/contact.dc.html): eoslab@yahoo.com, +91 9892652032.
+
+## Product categories
+- Ready-to-Use Culture Media (products.dc.html?cat=rtu)
+- Dehydrated Culture Media (products.dc.html?cat=dcm)
+- Antibiotic Susceptibility Testing (products.dc.html?cat=ast)
+
+## Notes
+- No prices are published anywhere; all pricing is quoted on request.
+- Individual product pages: products.dc.html?p=CODE

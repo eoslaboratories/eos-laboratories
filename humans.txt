@@ -1,0 +1,20 @@
+/* TEAM */
+Company: EOS Laboratories
+Site: https://eoslab.in
+Contact: eoslab [at] yahoo.com
+Location: Neminath Industrial Estate, Vasai East, Mumbai, India
+
+/* ABOUT */
+Manufacturer of microbiology culture media, diagnostic products,
+antibiotic susceptibility discs, transport systems and laboratory
+consumables for clinical, pharmaceutical, food, industrial and
+research laboratories.
+
+/* STANDARDS */
+Quality: ISO 9001, ISO 13485, ISO 11133
+Tagline: Precision. Quality. Trust.
+
+/* TECH */
+Static site — HTML, CSS, JavaScript. Hosted on GitHub Pages.
+Fonts: Cormorant Garamond, Inter.
+Last update: 2026-07-19

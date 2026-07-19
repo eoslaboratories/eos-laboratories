@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/styles.css">
+  <script src="_ds/eos-laboratories-design-system-84185060-efe0-482b-91ad-4864dc08cb96/_ds_bundle.js"></script>
+  <script src="./catalogue-data.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <style>body{margin:0;background:#fff;font-family:var(--font-body);}:root{--ink:#2B2F36;}*{box-sizing:border-box;}a{color:inherit;text-decoration:none;}.serif{font-family:'Cormorant Garamond',Georgia,serif;}.crumb a:hover{color:#F26B21}.sr:hover{background:#FAFAF8}.sr:hover .sr-code{color:#F26B21}.fld{height:48px;border:1px solid #D9DEE3;border-radius:10px;background:#FAFAF8;padding:0 16px;font-size:15px;color:var(--ink);outline:none}.fld:focus{border-color:#F26B21}</style>
+  <!-- data-eos-seo -->
+  <title>Search — EOS Laboratories</title>
+  <meta name="description" content="Search the EOS Laboratories catalogue by product name, code or category.">
+  <link rel="canonical" href="https://eoslab.in/search.dc.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EOS Laboratories">
+  <meta name="theme-color" content="#F26B21">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EOS Laboratories">
+  <meta property="og:title" content="Search — EOS Laboratories">
+  <meta property="og:description" content="Search the EOS Laboratories catalogue by product name, code or category.">
+  <meta property="og:url" content="https://eoslab.in/search.dc.html">
+  <meta property="og:image" content="https://eoslab.in/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Search — EOS Laboratories">
+  <meta name="twitter:description" content="Search the EOS Laboratories catalogue by product name, code or category.">
+  <meta name="twitter:image" content="https://eoslab.in/assets/og-image.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#F26B21">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Search","url":"https://eoslab.in/search.dc.html"}</script>
+  <link rel="stylesheet" href="responsive.css">
+</helmet>
+<div style="max-width:100%;overflow-x:clip;color:var(--ink)">
+  <dc-import name="SiteHeader" hint-size="100%,190px"></dc-import>
+
+  <section style="background:var(--eos-gray-100);padding:48px 40px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div class="crumb" style="font-size:12.5px;color:var(--eos-gray-400);margin-bottom:14px"><a href="index.dc.html">Home</a> / <span style="color:var(--ink)">Search</span></div>
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Search Results</span>
+      <h1 class="serif" style="font-size:clamp(28px,3.4vw,42px);line-height:1.12;font-weight:600;margin:12px 0 6px">{{ heading }}</h1>
+      <input value="{{ query }}" onChange="{{ onSearch }}" type="text" placeholder="Search products, media, reagents or codes..." class="fld" style="width:100%;max-width:560px;margin-top:14px">
+    </div>
+  </section>
+
+  <section style="padding:40px 40px 90px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div style="font-size:13px;color:var(--eos-gray-400);margin-bottom:12px">{{ count }} products found</div>
+      <sc-if value="{{ showFeature }}" hint-placeholder-val="{{ false }}">
+        <a href="antimicrobial-polydiscs.dc.html" style="display:flex;gap:16px;align-items:center;justify-content:space-between;border:1px solid var(--eos-orange);background:#FEF6F0;border-radius:8px;padding:18px 20px;margin-bottom:20px">
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--eos-orange)">Featured range</div>
+            <div style="font-size:16px;font-weight:600;color:var(--eos-blue-900);margin-top:4px">Antimicrobial Polydiscs</div>
+            <div style="font-size:13px;color:var(--eos-gray-700);margin-top:3px">Multi-antibiotic combination discs — 8, 10, 12 &amp; 20-antibiotic rings and custom panels.</div>
+          </div>
+          <span style="color:var(--eos-orange);font-weight:600;font-size:13px;white-space:nowrap">View range →</span>
+        </a>
+      </sc-if>
+      <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ true }}">
+      <div style="border-top:1px solid var(--color-border-default)">
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="10">
+          <a href="{{ r.href }}" class="sr" style="display:grid;grid-template-columns:120px 1fr 160px 90px;gap:14px;align-items:center;padding:15px 14px;border-bottom:1px solid var(--color-border-default)">
+            <div class="sr-code" style="font-family:monospace;font-size:12.5px;font-weight:700">{{ r.code }}</div>
+            <div style="font-size:14.5px">{{ r.name }}</div>
+            <div style="font-size:12.5px;color:var(--eos-gray-400)">{{ r.cat }}</div>
+            <div style="text-align:right;font-size:12.5px;font-weight:600;color:var(--eos-orange)">View →</div>
+          </a>
+        </sc-for>
+      </div>
+      </sc-if>
+      <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:60px 0;text-align:center">
+          <div class="serif" style="font-size:28px;font-weight:600">No products match "{{ query }}"</div>
+          <p style="color:var(--eos-gray-700);margin:12px 0 24px">Try a product code, media name or category keyword.</p>
+          <a href="products.dc.html" style="background:var(--eos-orange);color:#fff;font-size:14px;font-weight:600;padding:13px 26px;border-radius:2px">Browse full catalogue</a>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { query: '', cat: '', ready: false };
+  CATNAME = { rtu: 'Ready-to-Use Media', dcm: 'Dehydrated Media', ast: 'Antibiotic Discs' };
+  componentDidMount() {
+    const wait = () => {
+      if (!window.EOS_CATALOGUE) { setTimeout(wait, 40); return; }
+      const p = new URLSearchParams(window.location.search);
+      this.setState({ ready: true, query: p.get('q') || '', cat: p.get('cat') || '' });
+    };
+    wait();
+  }
+  renderVals() {
+    const data = (this.state.ready && window.EOS_CATALOGUE) ? window.EOS_CATALOGUE : [];
+    const q = this.state.query.trim().toLowerCase();
+    let results = data;
+    if (this.state.cat) results = results.filter(p => p.cat === this.state.cat);
+    if (q) results = results.filter(p => p.name.toLowerCase().includes(q) || p.code.toLowerCase().includes(q));
+    else results = [];
+    const mapped = results.slice(0, 100).map(p => ({ code: p.code, name: p.name, cat: this.CATNAME[p.cat], href: 'products.dc.html?p=' + encodeURIComponent(p.code) }));
+    const polyKeywords = ['polydisc', 'poly disc', 'combination', 'combi', 'ring', 'panel', 'multi', 'multidisc', '8 antibiotic', '10 antibiotic', '12 antibiotic', '20 antibiotic', 'octodisc', 'dodeca'];
+    const showFeature = q.length > 1 && polyKeywords.some(k => q.includes(k));
+    return {
+      query: this.state.query,
+      onSearch: (e) => this.setState({ query: e.target.value }),
+      heading: q ? 'Results for "' + this.state.query + '"' : 'Search the catalogue',
+      count: mapped.length,
+      results: mapped,
+      showFeature,
+      hasResults: mapped.length > 0,
+      noResults: q.length > 0 && mapped.length === 0 && !showFeature
+    };
+  }
+}
+
+</script>
+</body>
+</html>
