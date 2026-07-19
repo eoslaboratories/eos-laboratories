@@ -1,0 +1,52 @@
+/* EOS Laboratories — subtle lab-inspired background textures.
+   Geometric only (dot grid, hex outline, hairline grid) — CSS-generated, not icons/logos.
+   Brand sheet reference calls these "molecular", "DNA line", "lab grid" and "dot" patterns.
+   Use at low opacity as full-bleed section backgrounds; never as a foreground illustration. */
+
+:root {
+  --pattern-dot-color: rgba(47, 124, 203, 0.14);   /* eos-blue @ 14% */
+  --pattern-line-color: rgba(47, 124, 203, 0.10);
+  --pattern-hex-color: rgba(246, 134, 52, 0.10);   /* eos-orange @ 10% */
+}
+
+/* Fine dot grid — use on light surfaces behind hero/section copy */
+.pattern-dot-grid {
+  background-image: radial-gradient(var(--pattern-dot-color) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Hairline grid — technical/schematic feel, e.g. datasheet headers */
+.pattern-line-grid {
+  background-image:
+    linear-gradient(var(--pattern-line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pattern-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Hexagon outline field — "molecular" motif, use sparingly on dark or accent panels */
+.pattern-hex {
+  background-image:
+    linear-gradient(30deg, var(--pattern-hex-color) 1px, transparent 1px),
+    linear-gradient(150deg, var(--pattern-hex-color) 1px, transparent 1px),
+    linear-gradient(30deg, var(--pattern-hex-color) 1px, transparent 1px),
+    linear-gradient(150deg, var(--pattern-hex-color) 1px, transparent 1px),
+    linear-gradient(60deg, var(--pattern-hex-color) 1px, transparent 1px),
+    linear-gradient(120deg, var(--pattern-hex-color) 1px, transparent 1px);
+  background-size: 52px 90px;
+}
+
+/* Diagonal accent sweep — echoes the banner's curved orange/blue corner sweep. Apply as a pseudo-element, not a full pattern. */
+.pattern-corner-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.pattern-corner-sweep::before {
+  content: '';
+  position: absolute;
+  inset: -20% -20% auto auto;
+  width: 60%;
+  height: 60%;
+  background: conic-gradient(from 200deg at 0% 0%, var(--eos-orange) 0deg, transparent 40deg);
+  opacity: 0.08;
+  pointer-events: none;
+}

@@ -1,0 +1,282 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Montserrat|Inter))/i]",
+        "message": "Font not provided by the design system. Available: Montserrat, Inter."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|label|tone|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: icon, label, tone."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:blue|orange)$/]",
+        "message": "<Badge> tone must be one of 'blue' | 'orange'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|disabled|onClick|children|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, disabled, onClick, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|outline|ghost)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'outline' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProductCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:image|name|description|refCode|key|ref|className|style|children)$/]",
+        "message": "<ProductCard> doesn't accept that prop. Declared props: image, name, description, refCode."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute > JSXIdentifier[name!=/^(?:eyebrow|title|align|key|ref|className|style|children)$/]",
+        "message": "<SectionHeading> doesn't accept that prop. Declared props: eyebrow, title, align."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center)$/]",
+        "message": "<SectionHeading> align must be one of 'left' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SpecRow'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|key|ref|className|style|children)$/]",
+        "message": "<SpecRow> doesn't accept that prop. Declared props: label, value."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|children|key|ref|className|style|children)$/]",
+        "message": "<Tag> doesn't accept that prop. Declared props: tone, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:blue|orange|neutral|dark)$/]",
+        "message": "<Tag> tone must be one of 'blue' | 'orange' | 'neutral' | 'dark'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "ProductCard": {
+        "replaces": []
+      },
+      "SectionHeading": {
+        "replaces": []
+      },
+      "SpecRow": {
+        "replaces": []
+      },
+      "Tag": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--border-accent",
+      "--border-hairline",
+      "--color-bg-accent-blue",
+      "--color-bg-accent-orange",
+      "--color-bg-inverse",
+      "--color-bg-muted",
+      "--color-bg-page",
+      "--color-bg-surface",
+      "--color-border-accent",
+      "--color-border-default",
+      "--color-border-strong",
+      "--color-focus-ring",
+      "--color-link",
+      "--color-link-hover",
+      "--color-status-info",
+      "--color-status-success",
+      "--color-text-brand-blue",
+      "--color-text-brand-orange",
+      "--color-text-muted",
+      "--color-text-on-blue",
+      "--color-text-on-orange",
+      "--color-text-primary",
+      "--color-text-secondary",
+      "--content-max-width",
+      "--eos-blue",
+      "--eos-blue-100",
+      "--eos-blue-50",
+      "--eos-blue-700",
+      "--eos-blue-900",
+      "--eos-charcoal",
+      "--eos-gray-100",
+      "--eos-gray-200",
+      "--eos-gray-400",
+      "--eos-gray-700",
+      "--eos-orange",
+      "--eos-orange-100",
+      "--eos-orange-50",
+      "--eos-orange-600",
+      "--eos-white",
+      "--font-body",
+      "--font-display",
+      "--font-mono",
+      "--grid-gap",
+      "--pattern-dot-color",
+      "--pattern-hex-color",
+      "--pattern-line-color",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--shadow-lg",
+      "--shadow-md",
+      "--shadow-sm",
+      "--space-1",
+      "--space-10",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--text-body",
+      "--text-body-lg",
+      "--text-body-sm",
+      "--text-caption",
+      "--text-display-1",
+      "--text-display-2",
+      "--text-h1",
+      "--text-h2",
+      "--text-h3",
+      "--text-h4",
+      "--text-overline",
+      "--tracking-normal",
+      "--tracking-tight",
+      "--tracking-wide",
+      "--tracking-widest"
+    ],
+    "tokenKinds": {
+      "--eos-orange": "color",
+      "--eos-orange-600": "color",
+      "--eos-orange-100": "color",
+      "--eos-orange-50": "color",
+      "--eos-blue": "color",
+      "--eos-blue-700": "color",
+      "--eos-blue-900": "color",
+      "--eos-blue-100": "color",
+      "--eos-blue-50": "color",
+      "--eos-charcoal": "color",
+      "--eos-gray-700": "color",
+      "--eos-gray-400": "color",
+      "--eos-gray-200": "color",
+      "--eos-gray-100": "color",
+      "--eos-white": "color",
+      "--color-bg-page": "color",
+      "--color-bg-surface": "color",
+      "--color-bg-muted": "color",
+      "--color-bg-inverse": "color",
+      "--color-bg-accent-blue": "color",
+      "--color-bg-accent-orange": "color",
+      "--color-text-primary": "font",
+      "--color-text-secondary": "font",
+      "--color-text-muted": "font",
+      "--color-text-on-blue": "font",
+      "--color-text-on-orange": "font",
+      "--color-text-brand-blue": "font",
+      "--color-text-brand-orange": "font",
+      "--color-border-default": "color",
+      "--color-border-strong": "color",
+      "--color-border-accent": "color",
+      "--color-link": "color",
+      "--color-link-hover": "color",
+      "--color-focus-ring": "color",
+      "--color-status-success": "color",
+      "--color-status-info": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-mono": "font",
+      "--text-display-1": "font",
+      "--text-display-2": "font",
+      "--text-h1": "font",
+      "--text-h2": "font",
+      "--text-h3": "font",
+      "--text-h4": "font",
+      "--text-body-lg": "font",
+      "--text-body": "font",
+      "--text-body-sm": "font",
+      "--text-caption": "font",
+      "--text-overline": "font",
+      "--tracking-tight": "font",
+      "--tracking-normal": "font",
+      "--tracking-wide": "font",
+      "--tracking-widest": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-pill": "radius",
+      "--shadow-sm": "shadow",
+      "--shadow-md": "shadow",
+      "--shadow-lg": "shadow",
+      "--border-hairline": "color",
+      "--border-accent": "color",
+      "--content-max-width": "spacing",
+      "--grid-gap": "spacing",
+      "--pattern-dot-color": "color",
+      "--pattern-line-color": "color",
+      "--pattern-hex-color": "color"
+    },
+    "fontFamilies": [
+      "Inter",
+      "Montserrat"
+    ]
+  }
+}

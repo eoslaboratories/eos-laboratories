@@ -1,0 +1,54 @@
+/* EOS Laboratories — Color tokens
+   Palette finalized by EOS as of Jul 2026: Royal Blue #2563EB + Vibrant Orange #F97316
+   (superseding the brand-guideline-sheet's #2F7CCB/#F68634 — see readme.md "Caveats"). 
+   Usage proportion (retained from brand sheet): 60% white, 25% blue, 10% orange, 5% light gray. */
+
+:root {
+  /* ---- Base palette ---- */
+  --eos-orange:        #F97316; /* PRIMARY — "Vibrant Orange", finalized palette */
+  --eos-orange-600:    #DC5F0A; /* hover/pressed */
+  --eos-orange-100:    #FDE3CC; /* tint for chips/backgrounds */
+  --eos-orange-50:     #FEF1E4;
+
+  --eos-blue:          #2563EB; /* PRIMARY — "Royal Blue", finalized palette */
+  --eos-blue-700:      #1D4FC4; /* hover/pressed, deep accents */
+  --eos-blue-900:      #14275C; /* "deep blue" secondary swatch — navy accents, footers */
+  --eos-blue-100:      #DCE7FB; /* "sky blue" tint secondary swatch */
+  --eos-blue-50:       #F8FAFC; /* "Light Grey" per finalized palette spec — doubles as neutral bg */
+
+  --eos-charcoal:      #1A1A1A; /* secondary swatch — primary text on white */
+  --eos-gray-700:      #4A4E55;
+  --eos-gray-400:      #8A929C;
+  --eos-gray-200:      #DDE3E9; /* "light gray" secondary swatch */
+  --eos-gray-100:      #F8FAFC; /* "Light Grey" per finalized palette spec */
+  --eos-white:         #FFFFFF; /* PRIMARY — dominant 60% surface */
+
+  /* ---- Semantic aliases ---- */
+  --color-bg-page:          var(--eos-white);
+  --color-bg-surface:       var(--eos-white);
+  --color-bg-muted:         var(--eos-gray-100);
+  --color-bg-inverse:       var(--eos-blue-900);
+  --color-bg-accent-blue:   var(--eos-blue);
+  --color-bg-accent-orange: var(--eos-orange);
+
+  --color-text-primary:     var(--eos-charcoal);
+  --color-text-secondary:   var(--eos-gray-700);
+  --color-text-muted:       var(--eos-gray-400);
+  --color-text-on-blue:     var(--eos-white);
+  --color-text-on-orange:   var(--eos-white);
+  --color-text-brand-blue:  var(--eos-blue);
+  --color-text-brand-orange:var(--eos-orange);
+
+  --color-border-default:   var(--eos-gray-200);
+  --color-border-strong:    var(--eos-charcoal);
+  --color-border-accent:    var(--eos-orange);
+
+  --color-link:             var(--eos-blue);
+  --color-link-hover:       var(--eos-blue-700);
+
+  --color-focus-ring:       var(--eos-blue);
+
+  /* Certification / status accents (used sparingly, never as new primaries) */
+  --color-status-success:   #1E8E5A;
+  --color-status-info:      var(--eos-blue);
+}
