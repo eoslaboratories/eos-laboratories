@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="colors.css">
+  <link rel="stylesheet" href="typography.css">
+  <link rel="stylesheet" href="spacing.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="ds-bundle.js"></script>
+  <script src="./catalogue-data.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <style>body{margin:0;background:#fff;font-family:var(--font-body);}:root{--ink:#2B2F36;}*{box-sizing:border-box;}a{color:inherit;text-decoration:none;}.serif{font-family:'Cormorant Garamond',Georgia,serif;}.crumb a:hover{color:#F26B21}.hovcard:hover{border-color:var(--eos-orange)!important}.faq summary::-webkit-details-marker{display:none}.faq summary{list-style:none;cursor:pointer}.faq[open] .faq-plus{transform:rotate(45deg)}</style>
+  <!-- data-eos-seo -->
+  <title>Industry Solutions — EOS Laboratories</title>
+  <meta name="description" content="EOS microbiology products, applications, standards and documentation tailored to your industry.">
+  <link rel="canonical" href="https://eoslab.in/industry.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EOS Laboratories">
+  <meta name="theme-color" content="#F26B21">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EOS Laboratories">
+  <meta property="og:title" content="Industry Solutions — EOS Laboratories">
+  <meta property="og:description" content="EOS microbiology products, applications, standards and documentation tailored to your industry.">
+  <meta property="og:url" content="https://eoslab.in/industry.html">
+  <meta property="og:image" content="https://eoslab.in/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Industry Solutions — EOS Laboratories">
+  <meta name="twitter:description" content="EOS microbiology products, applications, standards and documentation tailored to your industry.">
+  <meta name="twitter:image" content="https://eoslab.in/og-image.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F26B21">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Industry Solutions","url":"https://eoslab.in/industry.html"}</script>
+  <link rel="stylesheet" href="responsive.css">
+</helmet>
+<div style="max-width:100%;overflow-x:clip;color:var(--ink)">
+  <dc-import name="SiteHeader" hint-size="100%,190px"></dc-import>
+
+  <!-- 1. HERO -->
+  <section style="position:relative;min-height:380px;display:flex;align-items:flex-end;padding:0 40px 44px;background:var(--ink)">
+    <image-slot id="ind-hero" shape="rect" placeholder="{{ data.heroPlaceholder }}" style="position:absolute;inset:0;z-index:0"></image-slot>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,47,54,.45),rgba(43,47,54,.86));z-index:1"></div>
+    <div style="position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%">
+      <div class="crumb" style="font-size:12.5px;color:rgba(255,255,255,.6);margin-bottom:14px"><a href="index.html" style="color:rgba(255,255,255,.6)">Home</a> / <a href="industries.html" style="color:rgba(255,255,255,.6)">Industries</a> / <span style="color:#fff">{{ data.name }}</span></div>
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Industry Solutions</span>
+      <h1 class="serif" style="color:#fff;font-size:clamp(32px,4.4vw,54px);line-height:1.1;font-weight:600;margin:12px 0 0">{{ data.name }}</h1>
+      <p style="color:rgba(255,255,255,.8);font-size:16px;line-height:1.6;max-width:560px;margin:14px 0 0">{{ data.tagline }}</p>
+    </div>
+  </section>
+
+  <!-- 2. OVERVIEW -->
+  <section style="padding:72px 40px 20px">
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;gap:64px">
+      <div>
+        <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Industry Overview</span>
+        <sc-for list="{{ data.overview }}" as="para" hint-placeholder-count="3">
+          <p style="font-size:16px;line-height:1.85;color:var(--eos-gray-700);margin:18px 0 0;max-width:640px">{{ para }}</p>
+        </sc-for>
+      </div>
+      <div style="border-left:2px solid var(--eos-orange);padding-left:24px;align-self:center">
+        <div class="serif" style="font-size:22px;font-weight:600;line-height:1.3">{{ data.pullquote }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TYPICAL APPLICATIONS (icon cards) -->
+  <section style="padding:56px 40px">
+    <div style="max-width:1280px;margin:0 auto">
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Typical Applications</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;margin-top:22px">
+        <sc-for list="{{ data.apps }}" as="a" hint-placeholder-count="4">
+          <div style="border:1px solid var(--color-border-default);border-radius:6px;padding:24px">
+            <div style="width:38px;height:38px;border-radius:8px;background:#FFF1E8;display:flex;align-items:center;justify-content:center;color:var(--eos-orange);font-weight:700;font-size:15px">{{ a.n }}</div>
+            <div style="font-size:15px;font-weight:600;margin-top:16px;line-height:1.3">{{ a.t }}</div>
+            <div style="font-size:13px;color:var(--eos-gray-700);line-height:1.55;margin-top:8px">{{ a.d }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. RECOMMENDED PRODUCTS -->
+  <section style="background:var(--eos-gray-100);padding:64px 40px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+        <div>
+          <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Recommended Products</span>
+          <h2 class="serif" style="font-size:clamp(26px,3vw,36px);font-weight:600;margin:10px 0 0">Products for {{ data.name }}</h2>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-for list="{{ data.cats }}" as="c" hint-placeholder-count="3">
+            <a href="{{ c.href }}" class="hovcard" style="border:1px solid var(--color-border-default);background:#fff;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600" style-hover="border-color:var(--eos-orange);color:var(--eos-orange)">{{ c.name }} →</a>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:28px">
+        <sc-for list="{{ featured }}" as="p" hint-placeholder-count="4">
+          <div class="hovcard" style="background:#fff;border:1px solid var(--color-border-default);border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+            <a href="{{ p.href }}"><image-slot id="{{ p.imgId }}" shape="rect" placeholder="{{ p.imgPlaceholder }}" style="width:100%;height:130px"></image-slot></a>
+            <div style="padding:14px 15px 16px;display:flex;flex-direction:column;flex:1">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--eos-orange)">{{ p.familyName }}</div>
+              <a href="{{ p.href }}" style="font-size:14px;font-weight:600;margin-top:6px;line-height:1.3" style-hover="color:var(--eos-orange)">{{ p.name }}</a>
+              <div style="font-family:monospace;font-size:11px;color:var(--eos-gray-400);margin-top:5px">REF {{ p.code }}</div>
+              <div style="display:flex;gap:8px;margin-top:14px">
+                <a href="{{ p.href }}" style="flex:1;text-align:center;background:var(--ink);color:#fff;font-size:11.5px;font-weight:600;padding:9px;border-radius:2px">View</a>
+                <a href="{{ p.enquireHref }}" style="flex:1;text-align:center;border:1px solid var(--eos-orange);color:var(--eos-orange);font-size:11.5px;font-weight:600;padding:9px;border-radius:2px" style-hover="background:var(--eos-orange);color:#fff">Enquire</a>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WHY EOS -->
+  <section style="padding:72px 40px">
+    <div style="max-width:1280px;margin:0 auto">
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Why EOS</span>
+      <h2 class="serif" style="font-size:clamp(26px,3vw,38px);font-weight:600;margin:10px 0 26px">Engineered for {{ data.name }} laboratories.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0;border-top:1px solid var(--color-border-default)">
+        <sc-for list="{{ whyEos }}" as="w" hint-placeholder-count="6">
+          <div style="padding:26px 24px 26px 0;border-bottom:1px solid var(--color-border-default);border-right:1px solid var(--color-border-default)">
+            <div style="width:22px;height:2px;background:var(--eos-orange);margin-bottom:14px"></div>
+            <div style="font-size:16px;font-weight:600">{{ w.t }}</div>
+            <div style="font-size:13.5px;color:var(--eos-gray-700);line-height:1.6;margin-top:8px;padding-right:16px">{{ w.d }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. STANDARDS & COMPLIANCE -->
+  <section style="background:var(--eos-gray-100);padding:56px 40px">
+    <div style="max-width:1280px;margin:0 auto">
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Standards &amp; Compliance</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:22px">
+        <sc-for list="{{ data.standards }}" as="s" hint-placeholder-count="4">
+          <div style="background:#fff;border:1px solid var(--color-border-default);border-radius:6px;padding:22px">
+            <div class="serif" style="font-size:20px;font-weight:600">{{ s.t }}</div>
+            <div style="font-size:12.5px;color:var(--eos-gray-700);margin-top:7px;line-height:1.5">{{ s.d }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. RELATED INDUSTRIES -->
+  <section style="padding:64px 40px 40px">
+    <div style="max-width:1280px;margin:0 auto">
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Related Industries</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-top:22px">
+        <sc-for list="{{ related }}" as="r" hint-placeholder-count="5">
+          <a href="{{ r.href }}" class="hovcard" style="display:block;border:1px solid var(--color-border-default);border-radius:6px;padding:20px" style-hover="border-color:var(--eos-orange)">
+            <div style="font-size:14px;font-weight:600;line-height:1.3">{{ r.name }}</div>
+            <div style="color:var(--eos-orange);font-size:14px;margin-top:12px">→</div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. DOWNLOADS -->
+  <section style="padding:20px 40px 56px">
+    <div style="max-width:1280px;margin:0 auto">
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Downloads</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:22px">
+        <sc-for list="{{ downloads }}" as="d" hint-placeholder-count="3">
+          <a href="downloads.html" class="hovcard" style="display:flex;justify-content:space-between;align-items:center;border:1px solid var(--color-border-default);border-radius:6px;padding:20px 22px" style-hover="border-color:var(--eos-orange)">
+            <div><div style="font-size:10.5px;font-weight:700;letter-spacing:.07em;color:var(--eos-orange)">{{ d.tag }}</div><div style="font-size:14.5px;font-weight:600;margin-top:6px">{{ d.title }}</div></div>
+            <span style="color:var(--eos-gray-400);font-size:16px">↓</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section style="background:var(--eos-gray-100);padding:64px 40px">
+    <div style="max-width:920px;margin:0 auto">
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Frequently Asked Questions</span>
+      <div style="margin-top:20px">
+        <sc-for list="{{ data.faqs }}" as="f" hint-placeholder-count="5">
+          <details class="faq" style="border-bottom:1px solid var(--color-border-default)">
+            <summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;font-size:16px;font-weight:600">{{ f.q }}<span class="faq-plus" style="color:var(--eos-orange);font-size:20px;transition:transform .2s;flex-shrink:0">+</span></summary>
+            <p style="font-size:14.5px;line-height:1.75;color:var(--eos-gray-700);margin:0 4px 20px">{{ f.a }}</p>
+          </details>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CTA -->
+  <section style="padding:80px 40px;text-align:center">
+    <h2 class="serif" style="font-size:clamp(28px,3.6vw,44px);font-weight:600;line-height:1.15">Need products for your laboratory?</h2>
+    <p style="color:var(--eos-gray-700);font-size:16px;line-height:1.6;max-width:520px;margin:16px auto 0">Our technical team supports product selection, documentation and custom manufacturing for {{ data.name }}.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+      <a href="products.html" style="background:var(--eos-orange);color:#fff;font-size:14px;font-weight:600;padding:15px 28px;border-radius:2px" style-hover="background:var(--eos-orange-600)">Browse Products</a>
+      <a href="request-a-quote.html" style="border:1px solid var(--ink);color:var(--ink);font-size:14px;font-weight:600;padding:15px 28px;border-radius:2px" style-hover="background:var(--ink);color:#fff">Request a Quote</a>
+      <a href="contact.html" style="border:1px solid var(--color-border-default);color:var(--ink);font-size:14px;font-weight:600;padding:15px 28px;border-radius:2px" style-hover="border-color:var(--eos-orange);color:var(--eos-orange)">Contact Technical Team</a>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { key: 'clinical', ready: false };
+  WHY = [
+    { t: 'ISO 13485 Manufacturing', d: 'Produced under a certified medical-device quality management system.' },
+    { t: 'Batch Consistency', d: 'Reproducible growth performance qualified lot after lot.' },
+    { t: 'Reference Strain Validation', d: 'Every batch tested against defined reference organisms before release.' },
+    { t: 'Documentation', d: 'COA, IFU, SDS and traceability available for every reference.' },
+    { t: 'Quality Control', d: 'Sterility and performance testing on every production lot.' },
+    { t: 'Technical Support', d: 'Microbiology specialists for product selection and troubleshooting.' }
+  ];
+  DB = {
+    clinical: { name: 'Clinical Laboratories', heroPlaceholder: 'Hospital microbiology laboratory, technician at bench',
+      tagline: 'Ready-to-use media, AST discs and transport systems for dependable, audit-ready diagnostics.',
+      overview: ['Clinical microbiology laboratories operate under intense pressure for accuracy, turnaround and traceability. Every isolate, susceptibility result and transported specimen must withstand accreditation scrutiny.',
+        'EOS supplies pre-poured, quality-controlled culture media, CLSI/EUCAST-aligned susceptibility discs and validated transport systems — released only after performance qualification against reference strains.',
+        'The result is consistent, dependable performance that reduces repeat testing and supports confident clinical reporting.'],
+      pullquote: 'Validated results your accreditation body can trust.',
+      apps: [{n:'01',t:'Isolation & Identification',d:'Routine bacterial culture from clinical specimens.'},{n:'02',t:'Susceptibility Testing',d:'Disc-diffusion AST to CLSI and EUCAST.'},{n:'03',t:'Specimen Transport',d:'Amies and Stuart systems preserving viability.'},{n:'04',t:'Anaerobic Recovery',d:'Reliable growth of oxygen-sensitive organisms.'}],
+      cats: [{name:'Ready-to-Use Media',href:'products.html?cat=rtu'},{name:'AST Discs',href:'products.html?cat=ast'},{name:'Transport Systems',href:'product-category.html?c=transport'}],
+      featuredCats: ['rtu','ast'],
+      standards: [{t:'ISO 15189',d:'Medical laboratory competence'},{t:'CLSI',d:'AST performance standards'},{t:'EUCAST',d:'Breakpoint & potency criteria'},{t:'ISO 11133',d:'Culture media QC'}],
+      faqs: [{q:'Are EOS media suitable for accredited clinical laboratories?',a:'Yes. All media are manufactured under ISO 13485 and performance-tested to ISO 11133 against reference strains, with a Certificate of Analysis for every lot.'},
+        {q:'Do your antibiotic discs follow CLSI or EUCAST?',a:'Both. Disc potencies are manufactured and certified to CLSI and EUCAST standards; the applicable standard is stated on documentation.'},
+        {q:'What shelf life do ready-to-use plates have?',a:'Typically 12–18 months at 2–8°C depending on formulation, with the expiry printed on each pack.'},
+        {q:'Can I obtain lot-specific documentation?',a:'Yes — COA, IFU and SDS are available for every reference and lot on request via the Downloads page.'},
+        {q:'Do you supply transport media for fastidious organisms?',a:'Yes, Amies (with/without charcoal) and Stuart transport systems are available to maintain viability in transit.'}] },
+    pharmaceutical: { name: 'Pharmaceutical', heroPlaceholder: 'Pharmaceutical QC cleanroom, environmental monitoring',
+      tagline: 'Pharmacopoeial media for sterility, bioburden and environmental monitoring under GMP.',
+      overview: ['Pharmaceutical quality control demands media that meet pharmacopoeial growth-promotion criteria and withstand regulatory inspection. Any deviation risks batch rejection or compliance findings.',
+        'EOS manufactures dehydrated and ready-to-use media aligned to USP, EP and IP methods for sterility testing, bioburden determination, environmental and personnel monitoring.',
+        'Documentation, traceability and growth-promotion data support GMP audits and data-integrity expectations end to end.'],
+      pullquote: 'Media that hold up to pharmacopoeial and GMP scrutiny.',
+      apps: [{n:'01',t:'Sterility Testing',d:'Membrane-filtration and direct-inoculation methods.'},{n:'02',t:'Bioburden',d:'Enumeration of viable microbial load.'},{n:'03',t:'EM & Personnel',d:'Settle and contact plates for cleanrooms.'},{n:'04',t:'Growth Promotion',d:'Qualification against pharmacopoeial strains.'}],
+      cats: [{name:'Dehydrated Media',href:'products.html?cat=dcm'},{name:'Ready-to-Use Media',href:'products.html?cat=rtu'},{name:'Laboratory Reagents',href:'product-category.html?c=reagents'}],
+      featuredCats: ['dcm','rtu'],
+      standards: [{t:'USP <71>',d:'Sterility testing'},{t:'EP 2.6.1',d:'European Pharmacopoeia'},{t:'ISO 14644',d:'Cleanroom classification'},{t:'GMP',d:'Good Manufacturing Practice'}],
+      faqs: [{q:'Do EOS media meet pharmacopoeial growth-promotion requirements?',a:'Yes. Formulations are validated to USP, EP and IP growth-promotion criteria, with supporting documentation available.'},
+        {q:'Are settle and contact plates available for environmental monitoring?',a:'Yes, ready-to-use plates suitable for surface and air monitoring are supplied with lot documentation.'},
+        {q:'Can you provide growth-promotion certificates?',a:'Certificates of Analysis including growth-promotion data are provided per lot on request.'},
+        {q:'Is irradiated or triple-bagged media available for cleanroom entry?',a:'Cleanroom-suitable packaging options can be discussed with our technical team for your grade requirements.'},
+        {q:'Do you support method validation?',a:'Our technical team can provide formulation data and reference-strain information to support your validation.'}] },
+    food: { name: 'Food & Beverage', heroPlaceholder: 'Food microbiology laboratory, sample plating',
+      tagline: 'Pathogen detection, indicator enumeration and shelf-life testing across the supply chain.',
+      overview: ['Food and beverage laboratories protect public health and brand reputation by detecting pathogens and spoilage organisms quickly and reliably.',
+        'EOS supplies selective, differential and enrichment media for Salmonella, Listeria, E. coli and indicator organisms, aligned to ISO horizontal methods.',
+        'Consistent media performance keeps release testing on schedule and defensible during audits and customer specification checks.'],
+      pullquote: 'Detect faster, release with confidence.',
+      apps: [{n:'01',t:'Pathogen Detection',d:'Salmonella, Listeria and E. coli isolation.'},{n:'02',t:'Indicator Counts',d:'Coliforms, yeasts and moulds enumeration.'},{n:'03',t:'Shelf-Life Testing',d:'Spoilage-organism monitoring.'},{n:'04',t:'Hygiene Monitoring',d:'Surface and environmental swabbing.'}],
+      cats: [{name:'Dehydrated Media',href:'products.html?cat=dcm'},{name:'Ready-to-Use Media',href:'products.html?cat=rtu'},{name:'Consumables',href:'product-category.html?c=consumables'}],
+      featuredCats: ['dcm','rtu'],
+      standards: [{t:'ISO 6579',d:'Salmonella detection'},{t:'ISO 11290',d:'Listeria detection'},{t:'ISO 4833',d:'Colony-count technique'},{t:'ISO 11133',d:'Culture media QC'}],
+      faqs: [{q:'Which pathogens can EOS media detect?',a:'Selective and differential media are available for Salmonella, Listeria, E. coli, Vibrio, Staphylococcus and common spoilage organisms.'},
+        {q:'Are your media aligned to ISO horizontal methods?',a:'Yes, formulations follow the relevant ISO methods where applicable, stated on the technical documentation.'},
+        {q:'Do you offer bulk dehydrated media for high throughput?',a:'Yes, dehydrated media are available in bulk pack sizes for cost-efficient in-house preparation.'},
+        {q:'Can media be supplied ready-to-use to save prep time?',a:'Yes, pre-poured ready-to-use plates are available for many food-testing formulations.'},
+        {q:'Is documentation available for customer audits?',a:'COA, IFU and SDS are provided per lot and are suitable for third-party and customer audits.'}] },
+    water: { name: 'Water Testing', heroPlaceholder: 'Water testing laboratory, membrane filtration',
+      tagline: 'Coliform, E. coli and heterotrophic plate-count media for water and environmental labs.',
+      overview: ['Water laboratories safeguard drinking-water safety and environmental compliance through routine microbial monitoring at high volume.',
+        'EOS provides selective and differential media optimised for membrane-filtration and pour-plate workflows, including coliform, E. coli and HPC determinations.',
+        'Reliable recovery and clear differentiation reduce confirmatory testing and keep regulatory reporting on time.'],
+      pullquote: 'Dependable recovery for regulatory water testing.',
+      apps: [{n:'01',t:'Coliform Detection',d:'Total coliform and E. coli confirmation.'},{n:'02',t:'HPC',d:'Heterotrophic plate counts.'},{n:'03',t:'Membrane Filtration',d:'Media optimised for MF workflows.'},{n:'04',t:'Environmental Water',d:'Surface and recreational water monitoring.'}],
+      cats: [{name:'Dehydrated Media',href:'products.html?cat=dcm'},{name:'Ready-to-Use Media',href:'products.html?cat=rtu'},{name:'Consumables',href:'product-category.html?c=consumables'}],
+      featuredCats: ['dcm','rtu'],
+      standards: [{t:'ISO 9308',d:'Coliform enumeration'},{t:'ISO 6222',d:'Heterotrophic counts'},{t:'ISO 11133',d:'Culture media QC'},{t:'ISO 17025',d:'Testing lab competence'}],
+      faqs: [{q:'Do you supply media for membrane filtration?',a:'Yes, formulations suited to membrane-filtration workflows for coliform and E. coli detection are available.'},
+        {q:'Are HPC media available in ready-to-use format?',a:'Yes, heterotrophic plate-count media are available both dehydrated and ready-to-use.'},
+        {q:'Do your media align to ISO water-testing methods?',a:'Where applicable, media follow the relevant ISO 9308/6222 methods, noted on documentation.'},
+        {q:'What pack sizes suit high-volume water labs?',a:'Bulk dehydrated pack sizes are available for cost-efficient routine testing.'},
+        {q:'Is lot documentation provided for accreditation?',a:'Yes, COA and related documents are available per lot for ISO 17025 accredited laboratories.'}] },
+    veterinary: { name: 'Veterinary', heroPlaceholder: 'Veterinary diagnostic laboratory',
+      tagline: 'Culture media and susceptibility panels for animal-health diagnostics and surveillance.',
+      overview: ['Veterinary laboratories diagnose animal disease and monitor antimicrobial resistance across companion, livestock and poultry populations.',
+        'EOS supplies culture media, transport systems and susceptibility discs suited to veterinary pathogens and one-health surveillance programmes.',
+        'Consistent performance supports accurate diagnosis and defensible resistance-monitoring data.'],
+      pullquote: 'Reliable diagnostics for animal-health laboratories.',
+      apps: [{n:'01',t:'Pathogen Isolation',d:'Culture of veterinary bacterial pathogens.'},{n:'02',t:'Susceptibility Testing',d:'Veterinary AST panels.'},{n:'03',t:'Mastitis & Enteric',d:'Screening of common infections.'},{n:'04',t:'Zoonotic Surveillance',d:'One-health resistance monitoring.'}],
+      cats: [{name:'Ready-to-Use Media',href:'products.html?cat=rtu'},{name:'AST Discs',href:'products.html?cat=ast'},{name:'Transport Systems',href:'product-category.html?c=transport'}],
+      featuredCats: ['rtu','ast'],
+      standards: [{t:'CLSI VET',d:'Veterinary AST standards'},{t:'ISO 11133',d:'Culture media QC'},{t:'OIE',d:'Animal-health guidance'},{t:'ISO 13485',d:'Quality management'}],
+      faqs: [{q:'Do you offer veterinary-specific susceptibility discs?',a:'Antibiotic discs suitable for veterinary AST panels are available, following CLSI veterinary guidance where applicable.'},
+        {q:'Which media suit mastitis screening?',a:'Selective and differential media appropriate for mastitis and enteric pathogens are available; contact us for panel recommendations.'},
+        {q:'Can you support resistance surveillance programmes?',a:'Yes, consistent disc potencies and documentation support longitudinal resistance monitoring.'},
+        {q:'Are transport swabs available for field sampling?',a:'Yes, Amies and Stuart transport systems maintain organism viability during transport to the laboratory.'},
+        {q:'Is lot documentation provided?',a:'COA, IFU and SDS are available per lot for every reference.'}] },
+    research: { name: 'Research & Academia', heroPlaceholder: 'University research microbiology laboratory',
+      tagline: 'Dehydrated media and reagents for reproducible method development and instruction.',
+      overview: ['Research and teaching laboratories need flexible, cost-efficient media that deliver reproducible results across diverse projects and student cohorts.',
+        'EOS supplies a broad dehydrated media range, ingredients, supplements and reagents supporting method development, custom formulation and general bacteriology.',
+        'Consistent raw-material specifications ensure experiments and teaching outcomes remain reproducible over time.'],
+      pullquote: 'Reproducible media for research and teaching.',
+      apps: [{n:'01',t:'Method Development',d:'Formulation and protocol optimisation.'},{n:'02',t:'Teaching Labs',d:'Reliable media for instruction.'},{n:'03',t:'Custom Media',d:'Bespoke formulations on request.'},{n:'04',t:'General Bacteriology',d:'Broad-range culture and study.'}],
+      cats: [{name:'Dehydrated Media',href:'products.html?cat=dcm'},{name:'Laboratory Reagents',href:'product-category.html?c=reagents'},{name:'Consumables',href:'product-category.html?c=consumables'}],
+      featuredCats: ['dcm'],
+      standards: [{t:'ISO 11133',d:'Culture media QC'},{t:'ISO 9001',d:'Quality management'},{t:'Pharmacopoeial',d:'USP/EP/IP references'},{t:'ISO 13485',d:'Manufacturing QMS'}],
+      faqs: [{q:'Can EOS produce custom media formulations?',a:'Yes, custom and bespoke media formulations can be developed with our technical team for specific research needs.'},
+        {q:'Are ingredients and supplements available separately?',a:'Yes, media bases, ingredients and supplements are supplied individually across the dehydrated range.'},
+        {q:'What pack sizes suit teaching laboratories?',a:'A range of pack sizes is available, including economical bulk options for high-volume teaching use.'},
+        {q:'How is batch-to-batch reproducibility ensured?',a:'Media are manufactured to fixed raw-material specifications and QC-tested for reproducible performance.'},
+        {q:'Do you provide preparation guidance?',a:'A media preparation guide and technical support are available to ensure correct rehydration and sterilisation.'}] }
+  };
+  componentDidMount() {
+    const wait = () => {
+      if (!window.EOS_CATALOGUE) { setTimeout(wait, 40); return; }
+      const k = new URLSearchParams(window.location.search).get('ind');
+      this.setState({ key: (k && this.DB[k]) ? k : 'clinical', ready: true });
+    };
+    wait();
+  }
+  imgPlaceholder(p) {
+    if (p.cat === 'rtu') return `${p.name} — 90mm prepared plate, studio white background`;
+    if (p.cat === 'dcm') return `${p.name} — dehydrated media bottle, studio white background`;
+    return `${p.name} antibiotic disc cartridge, studio white background`;
+  }
+  renderVals() {
+    const d = this.DB[this.state.key];
+    let featured = [];
+    if (this.state.ready && window.EOS_CATALOGUE) {
+      const pool = window.EOS_CATALOGUE.filter(p => d.featuredCats.includes(p.cat));
+      // spread across featured categories, 4 total
+      const perCat = {};
+      d.featuredCats.forEach(c => { perCat[c] = pool.filter(p => p.cat === c).slice().sort((a,b)=>a.name.localeCompare(b.name)); });
+      const take = d.featuredCats.length > 1 ? 2 : 4;
+      d.featuredCats.forEach(c => { featured = featured.concat(perCat[c].slice(0, take)); });
+      featured = featured.slice(0, 4).map(p => ({
+        code: p.code, name: p.name, familyName: p.family,
+        imgId: 'if-' + p.code, imgPlaceholder: this.imgPlaceholder(p),
+        href: 'products.html?p=' + encodeURIComponent(p.code),
+        enquireHref: 'request-a-quote.html?code=' + encodeURIComponent(p.code)
+      }));
+    }
+    const related = Object.keys(this.DB).filter(k => k !== this.state.key)
+      .map(k => ({ name: this.DB[k].name, href: 'industry.html?ind=' + k }));
+    const downloads = [
+      { tag: 'PDF · CATALOGUE', title: 'EOS Master Catalogue 2026–27' },
+      { tag: 'PDF · BROCHURE', title: d.name + ' Solutions Brochure' },
+      { tag: 'PDF · CERTIFICATE', title: 'ISO 9001 & 13485 Certificates' }
+    ];
+    return { data: d, whyEos: this.WHY, featured, related, downloads };
+  }
+}
+
+</script>
+</body>
+</html>

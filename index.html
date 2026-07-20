@@ -64,7 +64,7 @@
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="msapplication-config" content="/browserconfig.xml">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EOS Laboratories","url":"https://eoslab.in/","logo":"https://eoslab.in/android-chrome-512x512.png","description":"Manufacturer of microbiology culture media, antibiotic susceptibility discs, transport systems and laboratory consumables.","address":{"@type":"PostalAddress","streetAddress":"Neminath Industrial Estate, Vasai East","addressLocality":"Mumbai","addressCountry":"IN"},"email":"eoslab@yahoo.com","telephone":"+91-9892652032"}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"EOS Laboratories","url":"https://eoslab.in/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://eoslab.in/search.dc.html?q={query}"},"query-input":"required name=query"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"EOS Laboratories","url":"https://eoslab.in/","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://eoslab.in/search.html?q={query}"},"query-input":"required name=query"}}</script>
   <link rel="stylesheet" href="responsive.css">
 </helmet>
 
@@ -149,7 +149,7 @@
         </sc-for>
       </div>
       <div style="text-align:center;margin-top:32px">
-        <a href="products.dc.html" class="vfc" style="color:var(--eos-orange);font-size:14px;font-weight:600;display:inline-block">Explore Complete Catalogue <span class="vfc-arrow">→</span></a>
+        <a href="products.html" class="vfc" style="color:var(--eos-orange);font-size:14px;font-weight:600;display:inline-block">Explore Complete Catalogue <span class="vfc-arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -184,7 +184,7 @@
       </div>
       <div>
         <sc-for list="{{ docs }}" as="doc" hint-placeholder-count="6">
-          <a href="downloads.dc.html" style="display:flex;align-items:flex-start;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-border-default)">
+          <a href="downloads.html" style="display:flex;align-items:flex-start;gap:18px;padding:20px 0;border-bottom:1px solid var(--color-border-default)">
             <div style="width:52px;flex:none;font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--eos-gray-400);padding-top:3px">{{ doc.code }}</div>
             <div style="flex:1"><div style="font-size:15px;font-weight:600;color:var(--ink)">{{ doc.title }}</div><div style="font-size:13px;color:var(--eos-gray-400);line-height:1.5;margin-top:4px">{{ doc.desc }}</div></div>
             <span style="color:var(--eos-gray-400);font-size:16px">→</span>
@@ -202,7 +202,7 @@
 
       <div style="display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;background:#fff;border:1px solid var(--color-border-default);border-radius:4px;overflow:hidden">
         <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="8">
-          <a href="industries.dc.html" style="padding:26px;border-right:1px solid var(--color-border-default);border-bottom:1px solid var(--color-border-default)">
+          <a href="industries.html" style="padding:26px;border-right:1px solid var(--color-border-default);border-bottom:1px solid var(--color-border-default)">
             <div style="font-size:15px;font-weight:600;color:var(--ink)">{{ ind.name }}</div>
             <div style="font-size:13px;color:var(--eos-gray-400);margin-top:6px">{{ ind.desc }}</div>
             <div style="color:var(--eos-orange);font-size:15px;margin-top:16px">→</div>
@@ -218,8 +218,8 @@
     <h2 class="serif" style="color:var(--ink);font-size:clamp(32px,4.4vw,52px);line-height:1.15;font-weight:600;margin:18px 0 0">Ready to discuss<br><em style="font-style:italic;font-weight:500">your requirements?</em></h2>
     <p style="color:var(--eos-gray-700);font-size:16px;line-height:1.6;max-width:520px;margin:22px auto 0">Our technical team is available to support product selection, documentation requests, and custom manufacturing enquiries.</p>
     <div style="display:flex;justify-content:center;gap:14px;margin-top:34px">
-      <a href="request-a-quote.dc.html" style="background:var(--eos-orange);color:#fff;font-size:15px;font-weight:600;padding:15px 28px;border-radius:2px" style-hover="background:var(--eos-orange-600)">Send Enquiry</a>
-      <a href="products.dc.html" style="border:1px solid var(--color-border-default);color:var(--eos-gray-700);font-size:15px;font-weight:600;padding:15px 28px;border-radius:2px">Browse Products</a>
+      <a href="request-a-quote.html" style="background:var(--eos-orange);color:#fff;font-size:15px;font-weight:600;padding:15px 28px;border-radius:2px" style-hover="background:var(--eos-orange-600)">Send Enquiry</a>
+      <a href="products.html" style="border:1px solid var(--color-border-default);color:var(--eos-gray-700);font-size:15px;font-weight:600;padding:15px 28px;border-radius:2px">Browse Products</a>
     </div>
   </section><dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
 
@@ -285,21 +285,21 @@ class Component extends DCLogic {
     attach();
   }
   catalogueData = [
-    { name: 'Ready-to-Use Culture Media', desc: 'Pre-poured, QC-released plates & tubes', href: 'products.dc.html?cat=rtu' },
-    { name: 'Dehydrated Culture Media', desc: 'Consistent powdered formulations', href: 'products.dc.html?cat=dcm' },
-    { name: 'Chromogenic Media', desc: 'Colour-based organism differentiation', href: 'product-category.dc.html?c=chromogenic' },
-    { name: 'Antibiotic Susceptibility Discs', desc: 'EUCAST & CLSI certified potencies', href: 'products.dc.html?cat=ast' },
-    { name: 'Antibiotic Susceptibility Polydiscs', desc: 'Multi-antibiotic screening discs', href: 'product-category.dc.html?c=polydiscs' },
-    { name: 'Transport Swabs', desc: 'Amies & Stuart collection systems', href: 'product-category.dc.html?c=swabs' },
-    { name: 'Viral Transport Medium (VTM)', desc: 'Stabilised viral sample transport', href: 'product-category.dc.html?c=vtm' },
-    { name: 'Anaerobic Systems', desc: 'Jars, sachets & pre-reduced media', href: 'product-category.dc.html?c=anaerobic' },
-    { name: 'Laboratory Reagents', desc: 'Stains, indicators & test reagents', href: 'product-category.dc.html?c=reagents' },
-    { name: 'Laboratory Consumables', desc: 'Plates, loops & ancillary supplies', href: 'product-category.dc.html?c=consumables' },
-    { name: 'Prepared Agar Slants', desc: 'Ready-to-inoculate slant tubes', href: 'family.dc.html?fam=rtu-slants' },
-    { name: 'Identification Media', desc: 'Biochemical organism confirmation', href: 'product-category.dc.html?c=identification' },
-    { name: 'Differential Media', desc: 'Distinguishes organism groups', href: 'family.dc.html?fam=dcm-differential' },
-    { name: 'Selective Media', desc: 'Targeted pathogen isolation', href: 'family.dc.html?fam=dcm-selective' },
-    { name: 'Enrichment Media', desc: 'Recovery of stressed organisms', href: 'family.dc.html?fam=dcm-enrichment' }
+    { name: 'Ready-to-Use Culture Media', desc: 'Pre-poured, QC-released plates & tubes', href: 'products.html?cat=rtu' },
+    { name: 'Dehydrated Culture Media', desc: 'Consistent powdered formulations', href: 'products.html?cat=dcm' },
+    { name: 'Chromogenic Media', desc: 'Colour-based organism differentiation', href: 'product-category.html?c=chromogenic' },
+    { name: 'Antibiotic Susceptibility Discs', desc: 'EUCAST & CLSI certified potencies', href: 'products.html?cat=ast' },
+    { name: 'Antibiotic Susceptibility Polydiscs', desc: 'Multi-antibiotic screening discs', href: 'product-category.html?c=polydiscs' },
+    { name: 'Transport Swabs', desc: 'Amies & Stuart collection systems', href: 'product-category.html?c=swabs' },
+    { name: 'Viral Transport Medium (VTM)', desc: 'Stabilised viral sample transport', href: 'product-category.html?c=vtm' },
+    { name: 'Anaerobic Systems', desc: 'Jars, sachets & pre-reduced media', href: 'product-category.html?c=anaerobic' },
+    { name: 'Laboratory Reagents', desc: 'Stains, indicators & test reagents', href: 'product-category.html?c=reagents' },
+    { name: 'Laboratory Consumables', desc: 'Plates, loops & ancillary supplies', href: 'product-category.html?c=consumables' },
+    { name: 'Prepared Agar Slants', desc: 'Ready-to-inoculate slant tubes', href: 'family.html?fam=rtu-slants' },
+    { name: 'Identification Media', desc: 'Biochemical organism confirmation', href: 'product-category.html?c=identification' },
+    { name: 'Differential Media', desc: 'Distinguishes organism groups', href: 'family.html?fam=dcm-differential' },
+    { name: 'Selective Media', desc: 'Targeted pathogen isolation', href: 'family.html?fam=dcm-selective' },
+    { name: 'Enrichment Media', desc: 'Recovery of stressed organisms', href: 'family.html?fam=dcm-enrichment' }
   ];
   renderVals() {
     const active = this.state.activeTab;

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="colors.css">
+  <link rel="stylesheet" href="typography.css">
+  <link rel="stylesheet" href="spacing.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="ds-bundle.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <style>body{margin:0;background:#fff;font-family:var(--font-body);}:root{--ink:#2B2F36;}*{box-sizing:border-box;}a{color:inherit;text-decoration:none;}.serif{font-family:'Cormorant Garamond',Georgia,serif;}.crumb a:hover{color:#F26B21}.ind-row:hover{background:#FAFAF8}.ind-row:hover .ind-arrow{transform:translateX(4px);color:#F26B21}.ind-arrow{transition:transform .25s,color .25s}</style>
+  <!-- data-eos-seo -->
+  <title>Industries Served — EOS Laboratories</title>
+  <meta name="description" content="Microbiology solutions for clinical, pharmaceutical, food &amp; beverage, water, veterinary and research laboratories.">
+  <link rel="canonical" href="https://eoslab.in/industries.dc.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EOS Laboratories">
+  <meta name="theme-color" content="#F26B21">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EOS Laboratories">
+  <meta property="og:title" content="Industries Served — EOS Laboratories">
+  <meta property="og:description" content="Microbiology solutions for clinical, pharmaceutical, food &amp; beverage, water, veterinary and research laboratories.">
+  <meta property="og:url" content="https://eoslab.in/industries.dc.html">
+  <meta property="og:image" content="https://eoslab.in/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Industries Served — EOS Laboratories">
+  <meta name="twitter:description" content="Microbiology solutions for clinical, pharmaceutical, food &amp; beverage, water, veterinary and research laboratories.">
+  <meta name="twitter:image" content="https://eoslab.in/og-image.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F26B21">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Industries","url":"https://eoslab.in/industries.dc.html"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://eoslab.in/index.html"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://eoslab.in/industries.dc.html"}]}</script>
+  <link rel="stylesheet" href="responsive.css">
+</helmet>
+<div style="max-width:100%;overflow-x:clip;color:var(--ink)">
+  <dc-import name="SiteHeader" hint-size="100%,190px"></dc-import>
+
+  <section style="background:var(--eos-gray-100);padding:56px 40px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div class="crumb" style="font-size:12.5px;color:var(--eos-gray-400);margin-bottom:16px"><a href="index.html">Home</a> / <span style="color:var(--ink)">Industries</span></div>
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Industries Served</span>
+      <h1 class="serif" style="font-size:clamp(32px,4vw,50px);line-height:1.12;font-weight:600;margin:12px 0 0">Microbiology solutions across every sector.</h1>
+      <p style="color:var(--eos-gray-700);font-size:16px;line-height:1.7;margin:14px 0 0;max-width:640px">From hospital diagnostics to pharmaceutical QC and food safety, EOS products are engineered for the regulatory and performance demands of each field.</p>
+    </div>
+  </section>
+
+  <section style="padding:56px 40px 90px">
+    <div style="max-width:1280px;margin:0 auto">
+      <sc-for list="{{ inds }}" as="i" hint-placeholder-count="6">
+        <a href="{{ i.href }}" class="ind-row" style="display:flex;align-items:center;gap:36px;padding:26px 16px;border-top:1px solid var(--color-border-default)">
+          <span class="serif" style="font-size:22px;color:var(--eos-gray-400);width:44px;flex-shrink:0">{{ i.num }}</span>
+          <span style="font-size:20px;font-weight:500;width:280px;flex-shrink:0">{{ i.name }}</span>
+          <span style="font-size:14px;color:var(--eos-gray-700);flex:1">{{ i.desc }}</span>
+          <span class="ind-arrow" style="font-size:16px;flex-shrink:0">→</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  inds = [
+    { num: '01', name: 'Clinical Laboratories', desc: 'Culture media, AST discs and transport systems for hospital diagnostics', href: 'industry.dc.html?ind=clinical' },
+    { num: '02', name: 'Pharmaceutical', desc: 'GMP-aligned media for sterility, bioburden and environmental monitoring', href: 'industry.dc.html?ind=pharmaceutical' },
+    { num: '03', name: 'Food & Beverage', desc: 'Pathogen detection, indicator organisms and shelf-life testing', href: 'industry.dc.html?ind=food' },
+    { num: '04', name: 'Water Testing', desc: 'Coliform, E. coli and heterotrophic plate-count media', href: 'industry.dc.html?ind=water' },
+    { num: '05', name: 'Veterinary', desc: 'Animal-health diagnostics and susceptibility panels', href: 'industry.dc.html?ind=veterinary' },
+    { num: '06', name: 'Research & Academia', desc: 'Dehydrated media and reagents for method development', href: 'industry.dc.html?ind=research' }
+  ];
+  renderVals() { return { inds: this.inds }; }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="colors.css">
+  <link rel="stylesheet" href="typography.css">
+  <link rel="stylesheet" href="spacing.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="ds-bundle.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <style>body{margin:0;background:#fff;font-family:var(--font-body);}:root{--ink:#2B2F36;}*{box-sizing:border-box;}a{color:inherit;text-decoration:none;}.serif{font-family:'Cormorant Garamond',Georgia,serif;}.crumb a:hover{color:#F26B21}.rcard:hover{border-color:var(--eos-orange)!important}</style>
+  <!-- data-eos-seo -->
+  <title>Resources — EOS Laboratories</title>
+  <meta name="description" content="Downloads, product catalogue, quality documentation, manufacturing information and technical support from EOS Laboratories.">
+  <link rel="canonical" href="https://eoslab.in/resources.dc.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="EOS Laboratories">
+  <meta name="theme-color" content="#F26B21">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EOS Laboratories">
+  <meta property="og:title" content="Resources — EOS Laboratories">
+  <meta property="og:description" content="Downloads, product catalogue, quality documentation, manufacturing information and technical support from EOS Laboratories.">
+  <meta property="og:url" content="https://eoslab.in/resources.dc.html">
+  <meta property="og:image" content="https://eoslab.in/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Resources — EOS Laboratories">
+  <meta name="twitter:description" content="Downloads, product catalogue, quality documentation, manufacturing information and technical support from EOS Laboratories.">
+  <meta name="twitter:image" content="https://eoslab.in/og-image.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F26B21">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Resources","url":"https://eoslab.in/resources.dc.html"}</script>
+  <link rel="stylesheet" href="responsive.css">
+</helmet>
+<div style="max-width:100%;overflow-x:clip;color:var(--ink)">
+  <dc-import name="SiteHeader" hint-size="100%,190px"></dc-import>
+
+  <section style="background:var(--eos-gray-100);padding:48px 40px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div class="crumb" style="font-size:12.5px;color:var(--eos-gray-400);margin-bottom:14px"><a href="index.html">Home</a> / <span style="color:var(--ink)">Resources</span></div>
+      <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Resources</span>
+      <h1 class="serif" style="font-size:clamp(30px,3.8vw,48px);line-height:1.12;font-weight:600;margin:12px 0 0">Knowledge, documentation &amp; support.</h1>
+    </div>
+  </section>
+
+  <section style="padding:56px 40px 90px">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="6">
+        <a href="{{ c.href }}" class="rcard" style="display:block;border:1px solid var(--color-border-default);border-radius:4px;padding:28px;min-height:180px">
+          <div style="width:22px;height:2px;background:var(--eos-orange);margin-bottom:16px"></div>
+          <div class="serif" style="font-size:22px;font-weight:600">{{ c.title }}</div>
+          <p style="font-size:13.5px;color:var(--eos-gray-700);line-height:1.6;margin-top:10px">{{ c.desc }}</p>
+          <div style="color:var(--eos-orange);font-size:13px;font-weight:600;margin-top:16px">{{ c.cta }} →</div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  cards = [
+    { title: 'Downloads', desc: 'COA, SDS, IFU and technical data sheets for every catalogue reference.', cta: 'Open downloads', href: 'downloads.dc.html' },
+    { title: 'Product Catalogue', desc: 'Browse over 550 references across culture media, dehydrated media and AST discs.', cta: 'Browse catalogue', href: 'products.dc.html' },
+    { title: 'Quality & Compliance', desc: 'ISO certification, validation records and audit-ready documentation.', cta: 'View quality', href: 'quality.dc.html' },
+    { title: 'Manufacturing', desc: 'How EOS products move from raw material to laboratory-ready.', cta: 'See manufacturing', href: 'manufacturing.dc.html' },
+    { title: 'Media Preparation Guide', desc: 'Best-practice rehydration, sterilisation and storage of dehydrated media.', cta: 'Read guide', href: 'downloads.dc.html' },
+    { title: 'Technical Support', desc: 'Speak to our microbiology team for product selection and troubleshooting.', cta: 'Contact us', href: 'contact.dc.html' }
+  ];
+  renderVals() { return { cards: this.cards }; }
+}
+
+</script>
+</body>
+</html>
