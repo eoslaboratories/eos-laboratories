@@ -87,7 +87,7 @@
         <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--eos-gray-400);text-transform:uppercase">Contact</div>
         <div style="display:flex;flex-direction:column;gap:11px;margin-top:16px">
           <span style="font-size:13px;color:var(--eos-gray-700)">Neminath Industrial Estate,<br>Vasai East, Mumbai, India</span>
-          <a data-eos-mail href="#">eoslab [at] yahoo.com</a>
+          <a href="{{ mailHref }}" onClick="{{ onMail }}" data-eos-mail-text="no">{{ mailText }}</a>
           <span style="font-size:13px;color:var(--eos-gray-700)">+91 9892652032</span>
           <span style="font-size:13px;color:var(--eos-gray-700)">Mon–Sat, 9:00–18:00 IST</span>
           <a href="#">LinkedIn</a>
@@ -105,7 +105,7 @@
   </div>
 </footer>
 <div class="eos-fab-wrap">
-  <a class="eos-fab eos-fab-mail" data-eos-mail data-eos-mail-text="no" href="#" aria-label="Email EOS Laboratories">
+  <a class="eos-fab eos-fab-mail" href="{{ mailHref }}" onClick="{{ onMail }}" aria-label="Email EOS Laboratories">
     <span class="eos-tip">Email EOS Laboratories</span>
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
   </a>
@@ -116,5 +116,17 @@
 </div>
 
 </x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    var u = 'eoslab', d = 'yahoo.com', addr = u + '@' + d;
+    return {
+      mailText: addr,
+      mailHref: 'mailto:' + addr,
+      onMail: function (e) { e.preventDefault(); window.location.href = 'mailto:' + addr; }
+    };
+  }
+}
+</script>
 </body>
 </html>
