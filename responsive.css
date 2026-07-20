@@ -1,164 +1,127 @@
-/* EOS Laboratories — global responsive + no-horizontal-scroll layer
-   All rules are media-query-gated (≤1024px and below) so the desktop design is unchanged.
-   Uses attribute-substring selectors to reach the site's inline styles without touching HTML. */
+/* EOS Laboratories — global responsive layer
+   All rules are media-query-gated (≤1024px) so desktop is unchanged.
+   IMPORTANT: the DC runtime re-serializes inline styles through the CSSOM,
+   which normalizes spacing ("repeat(4,1fr)" -> "repeat(4, 1fr)", "padding:80px" -> "padding: 80px").
+   Selectors below match BOTH the normalized (spaced) and raw (unspaced) forms. */
 
 html, body { max-width: 100%; overflow-x: hidden; }
 img, svg, video, image-slot { max-width: 100%; }
 
-/* Accessibility: consistent keyboard focus ring site-wide */
 a:focus-visible, button:focus-visible, input:focus-visible,
 select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
-  outline: 2px solid #F26B21;
-  outline-offset: 2px;
-  border-radius: 3px;
+  outline: 2px solid #F26B21; outline-offset: 2px; border-radius: 3px;
 }
-.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-}
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
-/* ============================================================
-   TABLET  (≤1024px) — ease dense multi-column layouts
-   ============================================================ */
+/* ================= TABLET ≤1024px ================= */
 @media (max-width: 1024px) {
-  /* 5- and 6-col product/process grids → 3 up */
-  [style*="grid-template-columns:repeat(6,1fr)"],
-  [style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns: repeat(3, 1fr) !important; }
-  /* 4-col tiles → 2 up */
-  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+  [style*="repeat(6, 1fr)"], [style*="repeat(6,1fr)"],
+  [style*="repeat(5, 1fr)"], [style*="repeat(5,1fr)"] { grid-template-columns: repeat(3, 1fr) !important; }
+  [style*="repeat(4, 1fr)"], [style*="repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
-/* ============================================================
-   TABLET / LARGE PHONE  (≤860px) — collapse to single column
-   ============================================================ */
+/* ================= TABLET / LARGE PHONE ≤860px ================= */
 @media (max-width: 860px) {
-  /* Any 2-track "content + panel" or asymmetric split → stack */
-  [style*="grid-template-columns:1fr 1fr"],
-  [style*="grid-template-columns:1.2fr 1fr"],
-  [style*="grid-template-columns:1.4fr 1fr"],
-  [style*="grid-template-columns:1.6fr 1fr"],
-  [style*="grid-template-columns:1fr 1.2fr"],
-  [style*="grid-template-columns:2fr 1fr"],
-  [style*="grid-template-columns:230px 1fr"],
-  [style*="grid-template-columns: 230px 1fr"],
-  [style*="grid-template-columns:55fr 45fr"],
-  [style*="grid-template-columns:1.4fr 1fr"],
-  [style*="grid-template-columns:1.2fr 1fr"],
-  [style*="grid-template-columns:1fr 1.4fr"],
-  [style*="grid-template-columns:1fr 1.6fr"] { grid-template-columns: 1fr !important; }
+  /* two-track content+panel splits stack */
+  [style*="1fr 1fr"],
+  [style*="1.2fr 1fr"], [style*="1.4fr 1fr"], [style*="1.6fr 1fr"],
+  [style*="1fr 1.2fr"], [style*="1fr 1.4fr"], [style*="1fr 1.6fr"],
+  [style*="2fr 1fr"],
+  [style*="55fr 45fr"], [style*="45fr 55fr"], [style*="60fr 40fr"],
+  [style*="230px 1fr"], [style*="1fr 1.2fr"] { grid-template-columns: 1fr !important; }
 
-  /* multi-col product/process/footer grids → 2 up */
-  [style*="grid-template-columns:repeat(6,1fr)"],
-  [style*="grid-template-columns:repeat(5,1fr)"],
-  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+  [style*="repeat(6, 1fr)"], [style*="repeat(6,1fr)"],
+  [style*="repeat(5, 1fr)"], [style*="repeat(5,1fr)"],
+  [style*="repeat(4, 1fr)"], [style*="repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
 
-  /* large inter-column gaps tighten */
-  [style*="gap:64px"], [style*="gap: 64px"] { gap: 32px !important; }
-  [style*="gap:56px"], [style*="gap: 56px"] { gap: 28px !important; }
-  [style*="gap:48px"], [style*="gap: 48px"] { gap: 26px !important; }
-  [style*="gap:40px"], [style*="gap: 40px"] { gap: 24px !important; }
+  [style*="gap: 64px"], [style*="gap:64px"] { gap: 32px !important; }
+  [style*="gap: 56px"], [style*="gap:56px"] { gap: 28px !important; }
+  [style*="gap: 48px"], [style*="gap:48px"] { gap: 26px !important; }
+  [style*="gap: 40px"], [style*="gap:40px"] { gap: 24px !important; }
 
-  /* sidebar (catalogue) hides its fixed rail; filters flow inline above results */
-  aside[style*="align-self:start"] { position: static !important; }
+  aside[style*="align-self: start"], aside[style*="align-self:start"] { position: static !important; }
 }
 
-/* ============================================================
-   PHONE  (≤700px)
-   ============================================================ */
+/* ================= PHONE ≤700px ================= */
 @media (max-width: 700px) {
-  /* Section padding: trim vertical, pin horizontal to 20px */
-  [style*="padding:120px 40px"] { padding: 56px 20px !important; }
-  [style*="padding:100px 40px"] { padding: 52px 20px !important; }
-  [style*="padding:80px 40px"]  { padding: 48px 20px !important; }
-  [style*="padding:72px 40px"]  { padding: 44px 20px !important; }
-  [style*="padding:64px 40px"]  { padding: 40px 20px !important; }
-  [style*="padding:56px 40px"]  { padding: 36px 20px !important; }
-  [style*="padding:50px 40px"]  { padding: 34px 20px !important; }
-  [style*="padding:48px 40px"]  { padding: 32px 20px !important; }
-  [style*="padding:44px 40px"]  { padding: 30px 20px !important; }
-  [style*="padding:40px 40px"]  { padding: 28px 20px !important; }
-  [style*="0 40px"]             { padding-left: 20px !important; padding-right: 20px !important; }
-  [style*="padding:56px 40px 24px"] { padding: 40px 20px 20px !important; }
-  [style*="padding:48px 40px 34px"] { padding: 32px 20px 24px !important; }
+  /* Vertical padding trims; horizontal pinned to 20px. Both spaced + raw forms. */
+  [style*="padding: 120px 40px"], [style*="padding:120px 40px"] { padding: 56px 20px !important; }
+  [style*="padding: 100px 40px"], [style*="padding:100px 40px"] { padding: 52px 20px !important; }
+  [style*="padding: 80px 40px"],  [style*="padding:80px 40px"]  { padding: 48px 20px !important; }
+  [style*="padding: 72px 40px"],  [style*="padding:72px 40px"]  { padding: 44px 20px !important; }
+  [style*="padding: 64px 40px"],  [style*="padding:64px 40px"]  { padding: 40px 20px !important; }
+  [style*="padding: 60px 40px"],  [style*="padding:60px 40px"]  { padding: 40px 20px !important; }
+  [style*="padding: 56px 40px"],  [style*="padding:56px 40px"]  { padding: 36px 20px !important; }
+  [style*="padding: 50px 40px"],  [style*="padding:50px 40px"]  { padding: 34px 20px !important; }
+  [style*="padding: 48px 40px"],  [style*="padding:48px 40px"]  { padding: 32px 20px !important; }
+  [style*="padding: 44px 40px"],  [style*="padding:44px 40px"]  { padding: 30px 20px !important; }
+  [style*="padding: 40px 40px"],  [style*="padding:40px 40px"]  { padding: 28px 20px !important; }
 
-  /* Dense product/process grids → 2 up; feature/doc grids → 1 up */
-  [style*="grid-template-columns:repeat(6,1fr)"],
-  [style*="grid-template-columns:repeat(5,1fr)"],
-  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
-  [style*="grid-template-columns:repeat(3,1fr)"],
-  [style*="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))"],
-  [style*="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))"] { grid-template-columns: 1fr !important; }
+  /* Dense grids collapse; product/doc grids to 1-up */
+  [style*="repeat(6, 1fr)"], [style*="repeat(6,1fr)"],
+  [style*="repeat(5, 1fr)"], [style*="repeat(5,1fr)"],
+  [style*="repeat(4, 1fr)"], [style*="repeat(4,1fr)"],
+  [style*="repeat(3, 1fr)"], [style*="repeat(3,1fr)"],
+  [style*="repeat(2, 1fr)"], [style*="repeat(2,1fr)"],
+  [style*="minmax(240px"], [style*="minmax(200px"], [style*="minmax(220px"] { grid-template-columns: 1fr !important; }
 
-  /* Button rows wrap and go full-width for comfortable tap areas */
-  [style*="display:flex"][style*="gap:14px"],
-  [style*="display:flex"][style*="gap:16px"] { flex-wrap: wrap !important; }
-  [style*="display:flex"][style*="gap:14px"] > a,
-  [style*="display:flex"][style*="gap:16px"] > a { flex: 1 1 100% !important; text-align: center !important; }
+  /* Button rows wrap + go full-width for comfortable taps */
+  [style*="display: flex"][style*="gap: 14px"], [style*="display:flex"][style*="gap:14px"],
+  [style*="display: flex"][style*="gap: 16px"], [style*="display:flex"][style*="gap:16px"],
+  [style*="display: flex"][style*="gap: 12px"], [style*="display:flex"][style*="gap:12px"] { flex-wrap: wrap !important; }
+  [style*="display: flex"][style*="gap: 14px"] > a, [style*="display:flex"][style*="gap:14px"] > a,
+  [style*="display: flex"][style*="gap: 16px"] > a, [style*="display:flex"][style*="gap:16px"] > a { flex: 1 1 100% !important; text-align: center !important; }
 
-  /* Headings never overflow */
   h1, h2, h3 { overflow-wrap: break-word; word-break: break-word; }
+
+  /* Fluid search/select fields */
+  input[style*="width: 280px"], input[style*="width:280px"],
+  input[style*="width: 230px"], input[style*="width:230px"],
+  input[style*="width: 260px"], input[style*="width:260px"] { width: 100% !important; }
 }
 
-/* ============================================================
-   SMALL PHONE  (≤480px)
-   ============================================================ */
+/* ================= SMALL PHONE ≤480px ================= */
 @media (max-width: 480px) {
-  /* Everything single column, including 2-up product cards */
-  [style*="grid-template-columns:repeat(6,1fr)"],
-  [style*="grid-template-columns:repeat(5,1fr)"],
-  [style*="grid-template-columns:repeat(4,1fr)"],
-  [style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  [style*="repeat(6, 1fr)"], [style*="repeat(6,1fr)"],
+  [style*="repeat(5, 1fr)"], [style*="repeat(5,1fr)"],
+  [style*="repeat(4, 1fr)"], [style*="repeat(4,1fr)"],
+  [style*="repeat(3, 1fr)"], [style*="repeat(3,1fr)"],
+  [style*="repeat(2, 1fr)"], [style*="repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
 
-  /* Tighter edges on the smallest devices */
-  [style*="0 40px"] { padding-left: 16px !important; padding-right: 16px !important; }
-
-  /* Fixed-width search/select fields become fluid */
-  input[style*="width:280px"],
-  input[style*="width:230px"],
-  input[style*="width:260px"] { width: 100% !important; }
-
-  /* Footer bottom row: stack copyright + legal links */
-  [style*="justify-content:space-between"][style*="border-top"][style*="padding-top:22px"] { flex-direction: column !important; align-items: flex-start !important; }
+  /* Footer bottom row stacks */
+  [style*="justify-content: space-between"][style*="padding-top: 22px"],
+  [style*="justify-content:space-between"][style*="padding-top:22px"] { flex-direction: column !important; align-items: flex-start !important; }
 }
 
-/* ============================================================
-   TOUCH TARGETS  (coarse pointers) — ensure ≥44px tap areas
-   ============================================================ */
+/* ================= HERO + SAFE-AREA ≤960px ================= */
+@media (max-width: 960px) {
+  .eos-fab-wrap {
+    right: calc(16px + env(safe-area-inset-right)) !important;
+    bottom: calc(16px + env(safe-area-inset-bottom)) !important;
+  }
+  section[style*="min-height: 92vh"], section[style*="min-height:92vh"] {
+    padding-left: 20px !important; padding-right: 20px !important; padding-bottom: 36px !important;
+  }
+  section[style*="min-height: 92vh"] > div[style*="padding-top: 56px"],
+  section[style*="min-height:92vh"] > div[style*="padding-top:56px"] { padding-top: 24px !important; }
+}
+@media (max-width: 960px) and (orientation: landscape) and (max-height: 500px) {
+  section[style*="min-height: 92vh"], section[style*="min-height:92vh"] { min-height: 460px !important; }
+}
+
+/* ================= TOUCH TARGETS ================= */
 @media (hover: none) and (pointer: coarse) {
   nav a, .eos-nav a, .eos-foot a, .crumb a { min-height: 44px; display: inline-flex; align-items: center; }
   button, [role="button"] { min-height: 44px; }
 }
 
-/* ============================================================
-   FLOATING CONTACT BUTTONS
-   ============================================================ */
+/* ================= FLOATING BUTTONS ≤600px ================= */
 @media (max-width: 600px) {
   .eos-fab-wrap { right: 16px !important; bottom: 16px !important; }
   .eos-fab { width: 50px !important; height: 50px !important; }
 }
 
-/* ============================================================
-   iPhone SAFE-AREA + STICKY-FREE HEADER SPACING (≤960px)
-   ============================================================ */
-@media (max-width: 960px) {
-  /* Respect notch / home indicator on the floating buttons */
-  .eos-fab-wrap {
-    right: calc(16px + env(safe-area-inset-right)) !important;
-    bottom: calc(16px + env(safe-area-inset-bottom)) !important;
-  }
-  /* Hero: tighten top padding and side gutters so text never crops */
-  section[style*="min-height:92vh"] { padding-left: 20px !important; padding-right: 20px !important; padding-bottom: 36px !important; }
-  section[style*="min-height:92vh"] > div[style*="padding-top:56px"] { padding-top: 28px !important; }
-}
-
-/* Landscape phones: cap hero height so content isn't pushed off-screen */
-@media (max-width: 960px) and (orientation: landscape) and (max-height: 500px) {
-  section[style*="min-height:92vh"] { min-height: 460px !important; }
-}
-
-/* ============================================================
-   REDUCED MOTION — freeze hero video / fades
-   ============================================================ */
+/* ================= REDUCED MOTION ================= */
 @media (prefers-reduced-motion: reduce) {
   video[autoplay] { animation: none !important; opacity: 1 !important; }
   * { scroll-behavior: auto !important; }
