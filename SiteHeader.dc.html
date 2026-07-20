@@ -68,7 +68,7 @@
     <div style="display:flex;align-items:center;gap:18px;color:#E8EAED;white-space:nowrap;min-width:0;overflow:hidden">
       <span style="flex-shrink:0">+91 9892652032</span>
       <span style="color:rgba(255,255,255,.15);flex-shrink:0">|</span>
-      <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4b1bba7b8b5b694adb5bcbbbbfab7bbb9">[email&#160;protected]</a></span>
+      <a href="{{ mailHref }}" style="color:#E8EAED;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" style-hover="color:#F26B21">{{ mailText }}</a>
     </div>
     <div style="display:flex;align-items:center;gap:18px;white-space:nowrap;flex-shrink:0" class="util-links">
       <a href="downloads.html">COA / SDS Search</a>
@@ -232,7 +232,7 @@
 
       <div style="margin:8px 20px 24px;padding-top:16px;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-direction:column;gap:12px">
         <a href="tel:+919892652032" style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);text-decoration:none"><span aria-hidden="true" style="color:var(--eos-orange)">✆</span> +91 9892652032</a>
-        <a href="/cdn-cgi/l/email-protection#d5b0baa6b9b4b795acb4bdbabafbb6bab8" style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);text-decoration:none"><span aria-hidden="true" style="color:var(--eos-orange)">✉</span> <span class="__cf_email__" data-cfemail="13767c607f7271536a727b7c7c3d707c7e">[email&#160;protected]</span></a>
+        <a href="{{ mailHref }}" style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);text-decoration:none"><span aria-hidden="true" style="color:var(--eos-orange)">✉</span> {{ mailText }}</a>
         <div style="display:flex;gap:18px;margin-top:2px">
           <a href="downloads.html" style="font-size:13px;color:var(--eos-gray-700);text-decoration:none">COA / SDS</a>
           <a href="quality.html" style="font-size:13px;color:var(--eos-gray-700);text-decoration:none">Quality</a>
@@ -244,7 +244,7 @@
 </header>
 
 </x-dc>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script>
+<script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { ready: false, pcat: 'rtu', pfam: null, drawerOpen: false, sec: { products: true, industries: false, resources: false, about: false } };
   componentWillUnmount() { document.body.style.overflow = ''; }
@@ -261,7 +261,11 @@ class Component extends DCLogic {
   renderVals() {
     const sec = this.state.sec;
     const chev = (b) => b ? '–' : '+';
+    const _u = 'eoslab', _d = 'yahoo.com';
+    const mailText = _u + '@' + _d;
+    const mailHref = 'mailto:' + _u + '@' + _d;
     const mobileNav = {
+      mailText, mailHref,
       drawerClass: this.state.drawerOpen ? 'open' : '',
       menuExpanded: this.state.drawerOpen ? 'true' : 'false',
       openMenu: this.openMenu, closeMenu: this.closeMenu,
