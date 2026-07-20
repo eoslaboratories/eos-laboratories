@@ -309,14 +309,11 @@ class Component extends DCLogic {
       base.push({ k: 'Symbol', v: p.symbol || '—' });
       base.push({ k: 'Potency', v: p.potency || '—' });
       base.push({ k: 'Standard', v: 'CLSI & EUCAST' });
-      base.push({ k: 'Format', v: 'Cartridge / vial' });
     } else if (p.cat === 'rtu') {
-      base.push({ k: 'Format', v: '90mm plate / prepared tube' });
       base.push({ k: 'Sterility', v: 'Sterility tested per lot' });
       base.push({ k: 'Compliance', v: 'ISO 11133' });
       base.push({ k: 'Shelf life', v: '12–18 months (2–8°C)' });
     } else {
-      base.push({ k: 'Format', v: 'Dehydrated powder' });
       base.push({ k: 'Compliance', v: 'Pharmacopoeial / ISO' });
       base.push({ k: 'Shelf life', v: '36 months (sealed, dry)' });
     }
