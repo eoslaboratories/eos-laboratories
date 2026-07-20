@@ -133,13 +133,13 @@
       </div>
     </div>
     </div>
-  </section><section style="padding:80px 40px;background-color:var(--color-bg-page)">
+  </section><section style="padding:64px 40px;background-color:var(--color-bg-page)">
     <div style="max-width:1280px;margin:0 auto">
       <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Product Catalogue</span>
       <h2 class="serif" style="color:var(--ink);font-size:clamp(28px,3.2vw,38px);line-height:1.2;font-weight:600;margin:16px 0 0">Core Product Portfolio</h2>
       <p style="color:var(--eos-gray-700);font-size:16px;line-height:1.7;margin:14px 0 0;max-width:620px">Comprehensive microbiology solutions for clinical, pharmaceutical, industrial and research laboratories.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px 28px;margin-top:44px;border-top:1px solid var(--color-border-default)">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:24px 28px;margin-top:40px;border-top:1px solid var(--color-border-default)">
         <sc-for list="{{ catalogue }}" as="item" hint-placeholder-count="16">
           <a href="{{ item.href }}" class="cat-item" style="display:block;padding:20px 16px 18px;border-top:2px solid transparent;border-radius:4px;cursor:pointer">
             <div style="width:22px;height:2px;background:var(--eos-orange);margin-bottom:12px"></div>
@@ -148,7 +148,7 @@
           </a>
         </sc-for>
       </div>
-      <div style="text-align:center;margin-top:48px">
+      <div style="text-align:center;margin-top:32px">
         <a href="products.dc.html" class="vfc" style="color:var(--eos-orange);font-size:14px;font-weight:600;display:inline-block">Explore Complete Catalogue <span class="vfc-arrow">→</span></a>
       </div>
     </div>
@@ -174,7 +174,7 @@
   </section>
 
   <!-- QUALITY DOCUMENTATION -->
-  <section id="quality" style="padding:80px 40px;background-color:var(--color-bg-page)">
+  <section id="quality" style="padding:64px 40px;background-color:var(--color-bg-page)">
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:64px">
       <div>
         <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Quality Documentation</span>
@@ -195,7 +195,7 @@
   </section>
 
   <!-- INDUSTRIES -->
-  <section id="industries" style="padding:80px 40px;background:var(--eos-gray-100)">
+  <section id="industries" style="padding:64px 40px;background:var(--eos-gray-100)">
     <div style="max-width:1280px;margin:0 auto">
       <span style="color:var(--eos-orange);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Industries Served</span>
       <h2 class="serif" style="color:var(--ink);font-size:clamp(28px,3.2vw,38px);line-height:1.2;font-weight:600;margin:16px 0 0">Microbiology solutions<br>across every sector.</h2>
@@ -299,8 +299,7 @@ class Component extends DCLogic {
     { name: 'Identification Media', desc: 'Biochemical organism confirmation', href: 'product-category.dc.html?c=identification' },
     { name: 'Differential Media', desc: 'Distinguishes organism groups', href: 'family.dc.html?fam=dcm-differential' },
     { name: 'Selective Media', desc: 'Targeted pathogen isolation', href: 'family.dc.html?fam=dcm-selective' },
-    { name: 'Enrichment Media', desc: 'Recovery of stressed organisms', href: 'family.dc.html?fam=dcm-enrichment' },
-    { name: 'QC Reference Products', desc: 'Reference strains & control panels', href: 'product-category.dc.html?c=qc' }
+    { name: 'Enrichment Media', desc: 'Recovery of stressed organisms', href: 'family.dc.html?fam=dcm-enrichment' }
   ];
   renderVals() {
     const active = this.state.activeTab;
