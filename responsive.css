@@ -40,7 +40,12 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   [style*="grid-template-columns:1fr 1.2fr"],
   [style*="grid-template-columns:2fr 1fr"],
   [style*="grid-template-columns:230px 1fr"],
-  [style*="grid-template-columns: 230px 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: 230px 1fr"],
+  [style*="grid-template-columns:55fr 45fr"],
+  [style*="grid-template-columns:1.4fr 1fr"],
+  [style*="grid-template-columns:1.2fr 1fr"],
+  [style*="grid-template-columns:1fr 1.4fr"],
+  [style*="grid-template-columns:1fr 1.6fr"] { grid-template-columns: 1fr !important; }
 
   /* multi-col product/process/footer grids → 2 up */
   [style*="grid-template-columns:repeat(6,1fr)"],
@@ -130,6 +135,25 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 @media (max-width: 600px) {
   .eos-fab-wrap { right: 16px !important; bottom: 16px !important; }
   .eos-fab { width: 50px !important; height: 50px !important; }
+}
+
+/* ============================================================
+   iPhone SAFE-AREA + STICKY-FREE HEADER SPACING (≤960px)
+   ============================================================ */
+@media (max-width: 960px) {
+  /* Respect notch / home indicator on the floating buttons */
+  .eos-fab-wrap {
+    right: calc(16px + env(safe-area-inset-right)) !important;
+    bottom: calc(16px + env(safe-area-inset-bottom)) !important;
+  }
+  /* Hero: tighten top padding and side gutters so text never crops */
+  section[style*="min-height:92vh"] { padding-left: 20px !important; padding-right: 20px !important; padding-bottom: 36px !important; }
+  section[style*="min-height:92vh"] > div[style*="padding-top:56px"] { padding-top: 28px !important; }
+}
+
+/* Landscape phones: cap hero height so content isn't pushed off-screen */
+@media (max-width: 960px) and (orientation: landscape) and (max-height: 500px) {
+  section[style*="min-height:92vh"] { min-height: 460px !important; }
 }
 
 /* ============================================================
