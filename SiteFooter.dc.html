@@ -26,6 +26,22 @@
   @media print{.eos-fab-wrap{display:none}}
   </style>
   <link rel="stylesheet" href="responsive.css">
+  <script>
+  (function(){
+    var u='eoslab',d='yahoo.com',addr=u+'@'+d;
+    function fix(){
+      var els=document.querySelectorAll('a[data-eos-mail]');
+      for(var i=0;i<els.length;i++){
+        var el=els[i];
+        el.setAttribute('href','mailto:'+addr);
+        if(el.getAttribute('data-eos-mail-text')!=='no' && el.textContent.indexOf(addr)===-1){el.textContent=addr;}
+      }
+    }
+    if(document.readyState!=='loading')fix();else document.addEventListener('DOMContentLoaded',fix);
+    try{new MutationObserver(fix).observe(document.documentElement,{childList:true,subtree:true});}catch(e){}
+    var n=0,t=setInterval(function(){fix();if(++n>20)clearInterval(t);},150);
+  })();
+  </script>
 </helmet>
 <footer class="eos-foot" style="border-top:1px solid var(--color-border-default);padding:56px 40px 24px;background-color:var(--eos-gray-100)">  <div style="max-width:1280px;margin:0 auto">
     <a href="index.html" style="display:flex;align-items:center;gap:10px">
@@ -71,7 +87,7 @@
         <div style="font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--eos-gray-400);text-transform:uppercase">Contact</div>
         <div style="display:flex;flex-direction:column;gap:11px;margin-top:16px">
           <span style="font-size:13px;color:var(--eos-gray-700)">Neminath Industrial Estate,<br>Vasai East, Mumbai, India</span>
-          <a href="mailto:eoslab@yahoo.com">eoslab@yahoo.com</a>
+          <a data-eos-mail href="#">eoslab [at] yahoo.com</a>
           <span style="font-size:13px;color:var(--eos-gray-700)">+91 9892652032</span>
           <span style="font-size:13px;color:var(--eos-gray-700)">Mon–Sat, 9:00–18:00 IST</span>
           <a href="#">LinkedIn</a>
@@ -89,7 +105,7 @@
   </div>
 </footer>
 <div class="eos-fab-wrap">
-  <a class="eos-fab eos-fab-mail" href="mailto:eoslab@yahoo.com" aria-label="Email EOS Laboratories">
+  <a class="eos-fab eos-fab-mail" data-eos-mail data-eos-mail-text="no" href="#" aria-label="Email EOS Laboratories">
     <span class="eos-tip">Email EOS Laboratories</span>
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
   </a>
